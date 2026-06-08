@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events &amp; Runs | Elite Run Club</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#1f4682",
+                      "on-surface-variant": "#434750",
+                      "tertiary": "#313437",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-fixed": "#001a40",
+                      "on-surface": "#191c1e",
+                      "tertiary-container": "#474b4d",
+                      "primary": "#00336e",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#75a5ff",
+                      "surface-bright": "#f7f9fb",
+                      "primary-fixed-dim": "#acc7ff",
+                      "on-background": "#191c1e",
+                      "surface-variant": "#e0e3e5",
+                      "surface-container-low": "#f2f4f6",
+                      "on-tertiary-fixed-variant": "#43474a",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#b8bbbd",
+                      "secondary-fixed-dim": "#acc7ff",
+                      "on-secondary-container": "#00397c",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#eceef0",
+                      "surface-container-highest": "#e0e3e5",
+                      "primary-container": "#244a86",
+                      "secondary": "#235cb1",
+                      "primary-fixed": "#d7e2ff",
+                      "surface": "#f7f9fb",
+                      "on-primary-fixed": "#001a40",
+                      "outline-variant": "#c3c6d1",
+                      "secondary-fixed": "#d7e2ff",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#e0e3e5",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "surface-tint": "#3a5e9b",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#99bbff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#747781",
+                      "on-tertiary": "#ffffff",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-tertiary-fixed": "#181c1e",
+                      "inverse-surface": "#2d3133",
+                      "background": "#f7f9fb",
+                      "surface-container-high": "#e6e8ea",
+                      "on-secondary-fixed-variant": "#004492",
+                      "inverse-primary": "#acc7ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "container-padding": "24px",
+                      "base": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "title-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(36, 74, 134, 0.08);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(36, 74, 134, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface shadow-sm">
+<div class="flex justify-between items-center px-4 md:px-margin-desktop py-4 max-w-7xl mx-auto">
+<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-3"><img alt="Elite Run Club Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ"/>Elite Run Club</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="/">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="/events">Runs &amp; Events</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="/routes">Local Routes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="/community">Community</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Merch</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block bg-primary text-on-primary px-6 py-2.5 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all active:scale-95">Join Next Run</button>
+<img alt="Member Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlGLpV13SGv8LrGKsH2CPl4M0wuDUzPWR4qu7sRpFCOGDabHsO9x45XOZ5BN-lGMpN8q12L3Czz1rPOBhKrOmAyfroKi7KeinvJnopUPmMuxXLwn5LoFJUOWNHUFy1sWBchSh8dBonWpKUi9TC71IBmZjHwqPsGeS1ylNKOq7BeOFqU1TROihZsTlRl3dht0-JEkGOt0DeMrLYBuj8B_c-_egnwRK2ZHacbScm8A0Cb9aq5rjQUNUNtP_tXeKZXgGiTi_uHSlFapo"/>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full py-16 md:py-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-15" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBasyfHOeRRsV9JhhtB8Ay4_UBnMWRQQed9d178vwW6QNBplmmZMEy9Fhy5NGvROw-t8KU3r6veDpgeEn7IlvK41LWYcje6RQgxDb7c43rJbRc4ZKvD-NXcIXvXBUfIBucvgoBjTAfaSHXCbZtQmf-vmVthk--qqeoZCkwIFhoQ1fC8fpxNQlphnnKtkwA85f6Pvh3Xcez2l8FgIopHtx6Th51-GIqYDllADXG7dRAh72mDWajDC2AUhQ2hnr5nhk-5S8fdmjArEs4"/>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 md:px-margin-desktop text-center">
+<h1 class="font-headline-xl text-headline-xl md:text-5xl text-primary mb-4">Find Your Next Run</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Whether you're training for your first 5K or looking for a casual weekend social, there's a pace and a place for you here. All levels welcome, always.
+            </p>
+</div>
+</header>
+<!-- Filters & Content -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-4 md:px-margin-desktop pb-24">
+<!-- Filter Bar -->
+<div class="bg-surface-container-low p-6 rounded-2xl mb-12 flex flex-wrap gap-4 items-end ambient-shadow">
+<div class="flex-grow min-w-[200px]">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Run Type</label>
+<select class="w-full bg-surface border-outline-variant rounded-xl py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+<option>All Types</option>
+<option>Social Run</option>
+<option>Speed Work</option>
+<option>Long Run</option>
+<option>Trail Adventure</option>
+</select>
+</div>
+<div class="flex-grow min-w-[200px]">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Day of Week</label>
+<div class="flex gap-2">
+<button class="bg-primary text-on-primary px-4 py-3 rounded-xl font-label-md text-label-md transition-all">All Days</button>
+<button class="bg-surface border border-outline-variant text-on-surface px-4 py-3 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-all">Weekend</button>
+<button class="bg-surface border border-outline-variant text-on-surface px-4 py-3 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-all">Weekdays</button>
+</div>
+</div>
+<button class="flex items-center gap-2 text-primary font-label-md text-label-md px-4 py-3 hover:bg-primary-fixed rounded-xl transition-all">
+<span class="material-symbols-outlined">filter_list</span>
+                Advanced Filters
+            </button>
+</div>
+<!-- Events Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Featured Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-3xl p-gutter ambient-shadow border border-surface-variant transition-all card-hover flex flex-col md:flex-row gap-8">
+<div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHHRk3AUc9pHE3ijWH2LMl33WV_RF_x4cOMjkfEoMlI-VvK2GS2SmchEAYWeyhU9PtgmQUCjFqAootKYf1SfhYkT_yJCt5EPJDTpRztcKEm-9Xx000YL9TjLHZ7Fjan5q4xUSHL69V8WBlUbt78eaUT2R8woYApcYfa4C7qiOOuU4wW0iSEuZjeXbD24rCBuIIU2jOAz9MVdrEbgQWSz_UDxJ9mA1vrULbVyXgADzgbW9x1EaL9U5kbrKE0MCTsIH9Iyq52vgvltA"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-between">
+<div>
+<span class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-[12px] mb-4">SOCIAL RUN</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">The Weekend Collective</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Our flagship community run. We start together, we finish together. Post-run coffee included.</p>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="font-body-md">Saturday, Oct 12 • 8:30 AM</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-body-md">Central Park South Entrance</span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNCRuWbMMmyyo_A6z9p0_xvJGVMmwo6XOoqzrAMRyY8zk51vF7tNUgMmi5PhetDtBlfM_kLMNZuZ4bwpD7B8JzK_nVGGGATvz6SgOWb4Jj_RQ4715mTwkOSrf9ejFnl3S_CokngHQFNVMJvrRdeKlZS6NuSSktAZ57BLK0U_XtGx8wee-vAP5W1XrM2WLf0gQHmLcxympWbpq_eHwX22FhW-GmjcxjlUdAAKQ2Yfgt6ID55Twr-QQ_d17k6EwLH9ZrsiqO61M53eU"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrbnILhj-LVzBvFRgcXo8z9SCtFvpIJ2TvtOewT853ep4ZONmhXIWbzE8mmeIU8CoFPEw5edNG-FTPzuocU_fsKJC-tTZKunTRqKBDqgtqjV1H04G2TzMKKvdaZKVRg2ufLFBw_ruVjsqO4l1od86siv91oIV5XvXV5ZbYB8eJJ3fUt0dKAoNjnjADLK4uAT4pwYQJMWztoSh0NIjfNq-FW946I6ZC_bKmrzG4HRlxzLEO6LfuVSIWwHzOKlYQQSIrWXyMaO9O_kE"/>
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim border-2 border-white flex items-center justify-center text-[10px] font-bold text-primary">+42</div>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all">Count Me In</button>
+</div>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 ambient-shadow border border-surface-variant transition-all card-hover">
+<span class="inline-block bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full font-label-md text-[12px] mb-4">SPEED WORK</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Track Tuesday</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Interval training designed for all paces. Find your next gear with the squad.</p>
+<div class="space-y-3 mb-8">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="font-label-md">Tuesday, Oct 15 • 6:00 PM</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">stadium</span>
+<span class="font-label-md">Riverside Track Complex</span>
+</div>
+</div>
+<button class="w-full border border-primary text-primary px-6 py-3 rounded-xl font-label-md text-label-md hover:bg-primary-fixed transition-all">Join Session</button>
+</div>
+<!-- Side Card 2 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 ambient-shadow border border-surface-variant transition-all card-hover flex flex-col">
+<img class="w-full h-40 object-cover rounded-2xl mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9CQdAJmaFc7DKd_5Ab_k5wdAd-QamWwc3T0Yqsrh4lxFNDmzUhDmokuBY1HpSrbMHzL65SRYO6uo3dVE1dcxBHmWjFYpT3vQ33Ae340c98kn1oReXTupSfQChK0RxCcIWhrgGkDVsRjMGikzTGnmCNVWWOrOaWgwY__31wZPPA4mzaIJ4xa7BYx0zTSmHduMcIkgDV3iaBsvH2804ol_7fC-zixOz-sSgxmIqU8givPAMWEvdmZhKq-J_PTu4vDeuXUlQRFT91cI"/>
+<span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-md text-[12px] mb-4">LONG RUN</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">River Trail 15K</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A steady state endurance run along the scenic river path. Pacers available for 5:30 to 7:00/km.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="text-on-surface-variant font-label-md">Sunday • 7 AM</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all">RSVP</button>
+</div>
+</div>
+<!-- List View Component for Upcoming Events -->
+<div class="md:col-span-2 bg-surface rounded-3xl overflow-hidden border border-outline-variant">
+<div class="bg-surface-container-high p-6 flex justify-between items-center">
+<h4 class="font-title-md text-title-md text-primary">More Upcoming Events</h4>
+<span class="font-label-md text-on-surface-variant">October 2024</span>
+</div>
+<div class="divide-y divide-outline-variant">
+<div class="p-6 flex items-center justify-between hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-6">
+<div class="text-center">
+<div class="text-primary font-bold text-xl">18</div>
+<div class="text-[10px] uppercase text-on-surface-variant font-bold">OCT</div>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface group-hover:text-primary transition-colors">Evening City Loop</h5>
+<p class="text-[12px] text-on-surface-variant">Social Run • 5km • 7:00 PM</p>
+</div>
+</div>
+<button class="text-primary font-bold text-label-md p-2 hover:bg-primary-fixed rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="p-6 flex items-center justify-between hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-6">
+<div class="text-center">
+<div class="text-primary font-bold text-xl">20</div>
+<div class="text-[10px] uppercase text-on-surface-variant font-bold">OCT</div>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface group-hover:text-primary transition-colors">Hill Repeat Clinic</h5>
+<p class="text-[12px] text-on-surface-variant">Skill Workshop • 60 min • 9:00 AM</p>
+</div>
+</div>
+<button class="text-primary font-bold text-label-md p-2 hover:bg-primary-fixed rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="p-6 flex items-center justify-between hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-6">
+<div class="text-center">
+<div class="text-primary font-bold text-xl">23</div>
+<div class="text-[10px] uppercase text-on-surface-variant font-bold">OCT</div>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface group-hover:text-primary transition-colors">New Member Orientation</h5>
+<p class="text-[12px] text-on-surface-variant">Community • 3km Fun Run • 6:30 PM</p>
+</div>
+</div>
+<button class="text-primary font-bold text-label-md p-2 hover:bg-primary-fixed rounded-full flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-4 md:px-margin-desktop py-12 max-w-7xl mx-auto">
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-4 flex items-center gap-3"><img alt="Elite Run Club Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ"/>Elite Run Club</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Elite Run Club. Join the collective pursuit.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h6 class="font-label-md text-primary uppercase tracking-wider mb-2">Community</h6>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">WhatsApp Groups</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Local Chapters</a>
+</div>
+<div class="flex flex-col gap-3">
+<h6 class="font-label-md text-primary uppercase tracking-wider mb-2">Resources</h6>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Member Stories</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">group</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">notifications</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB (Contextual for Home/Events) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-2xl shadow-2xl flex items-center justify-center active:scale-95 transition-all hover:rotate-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+
+<script>
+// ── Filter buttons ──────────────────────────────────────────────────
+const filterBtns = document.querySelectorAll('button');
+let currentFilter = 'all';
+
+filterBtns.forEach(btn => {
+  const text = btn.textContent.trim();
+  if (['All Days', 'Weekend', 'Weekdays'].includes(text)) {
+    btn.addEventListener('click', () => {
+      currentFilter = text === 'All Days' ? 'all' : text === 'Weekend' ? 'weekend' : 'weekday';
+      filterBtns.forEach(b => {
+        if (['All Days', 'Weekend', 'Weekdays'].includes(b.textContent.trim())) {
+          b.classList.toggle('bg-primary', b === btn);
+          b.classList.toggle('text-on-primary', b === btn);
+          b.classList.toggle('bg-surface', b !== btn);
+          b.classList.toggle('text-on-surface', b !== btn);
+        }
+      });
+    });
+  }
+});
+
+// ── RSVP buttons ────────────────────────────────────────────────────
+// Wire all RSVP / "Count Me In" / "Join Session" buttons
+document.querySelectorAll('button').forEach(btn => {
+  const text = btn.textContent.trim();
+  if (['RSVP', 'Count Me In', 'Join Session'].includes(text)) {
+    // Find nearest event card to get event context
+    btn.addEventListener('click', () => {
+      const card = btn.closest('[class*="card"], section, article, div[class*="bg-surface"]') || btn.parentElement;
+      const titleEl = card ? card.querySelector('h2,h3,h4') : null;
+      const title = titleEl ? titleEl.textContent.trim() : 'this run';
+      showRsvpModal(null, title); // eventId resolved server-side by next event fallback
+    });
+  }
+
+  // "Join Next Run" nav button goes to events page
+  if (text === 'Join Next Run') {
+    btn.addEventListener('click', () => showRsvpModal());
+  }
+});
+
+// Check URL for highlighted event
+const params = new URLSearchParams(window.location.search);
+const highlightId = params.get('highlight');
+if (highlightId) {
+  // Scroll to and pulse the first RSVP button after a short delay
+  setTimeout(() => {
+    const rsvpBtns = [...document.querySelectorAll('button')].filter(b =>
+      ['RSVP', 'Count Me In', 'Join Session'].includes(b.textContent.trim())
+    );
+    if (rsvpBtns[0]) {
+      rsvpBtns[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      rsvpBtns[0].style.animation = 'pulse 1s 3';
+    }
+  }, 400);
+}
+
+// ── RSVP Modal ───────────────────────────────────────────────────────
+async function showRsvpModal(eventId, eventTitle) {
+  // Get next event if no ID provided
+  if (!eventId) {
+    try {
+      const res = await fetch('/api/events/next');
+      if (res.ok) {
+        const ev = await res.json();
+        eventId = ev.id;
+        eventTitle = eventTitle || ev.title;
+      }
+    } catch(e) {}
+  }
+
+  const existing = document.getElementById('erc-rsvp-modal');
+  if (existing) { existing.style.display='flex'; return; }
+
+  const modal = document.createElement('div');
+  modal.id = 'erc-rsvp-modal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:9999;';
+  modal.innerHTML = `
+    <div style="background:#fff;border-radius:20px;padding:32px;width:90%;max-width:420px;position:relative;">
+      <button onclick="document.getElementById('erc-rsvp-modal').style.display='none'"
+        style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;">✕</button>
+      <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:4px;">RSVP</h2>
+      <p id="erc-rsvp-event-name" style="color:#2B4A8C;font-weight:600;margin-bottom:20px;">${eventTitle || 'Upcoming Run'}</p>
+      <input id="erc-rsvp-name" placeholder="Your name" style="width:100%;border:1px solid #ddd;border-radius:12px;padding:12px;margin-bottom:12px;font-size:1rem;box-sizing:border-box;">
+      <input id="erc-rsvp-email" type="email" placeholder="Email address" style="width:100%;border:1px solid #ddd;border-radius:12px;padding:12px;margin-bottom:12px;font-size:1rem;box-sizing:border-box;">
+      <input id="erc-rsvp-phone" type="tel" placeholder="Phone (optional)" style="width:100%;border:1px solid #ddd;border-radius:12px;padding:12px;margin-bottom:16px;font-size:1rem;box-sizing:border-box;">
+      <button id="erc-rsvp-submit" onclick="submitRsvp(${eventId})"
+        style="width:100%;background:#2B4A8C;color:#fff;border:none;border-radius:12px;padding:14px;font-size:1rem;font-weight:600;cursor:pointer;">
+        Count Me In
+      </button>
+      <p id="erc-rsvp-msg" style="margin-top:12px;text-align:center;font-size:0.9rem;"></p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
+
+async function submitRsvp(eventId) {
+  const name = document.getElementById('erc-rsvp-name').value.trim();
+  const email = document.getElementById('erc-rsvp-email').value.trim();
+  const phone = document.getElementById('erc-rsvp-phone').value.trim();
+  const msg = document.getElementById('erc-rsvp-msg');
+  const btn = document.getElementById('erc-rsvp-submit');
+
+  if (!name || !email) { msg.textContent = 'Name and email are required.'; msg.style.color='red'; return; }
+  if (!eventId) { msg.textContent = 'Could not find event. Please refresh.'; msg.style.color='red'; return; }
+
+  btn.textContent = 'Submitting...'; btn.disabled = true;
+
+  try {
+    const res = await fetch(`/api/events/${eventId}/rsvp`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ name, email, phone })
+    });
+    const data = await res.json();
+    msg.textContent = data.message || data.error;
+    msg.style.color = res.ok ? '#2B4A8C' : 'red';
+    if (res.ok) { btn.textContent = "✓ You're in!"; }
+    else { btn.textContent = 'Count Me In'; btn.disabled = false; }
+  } catch(e) {
+    msg.textContent = 'Something went wrong. Try again.';
+    msg.style.color = 'red';
+    btn.textContent = 'Count Me In'; btn.disabled = false;
+  }
+}
+</script>
+</body></html>
