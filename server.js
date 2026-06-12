@@ -1,7 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const { getDb, save } = require("./db");
+const email = require("./email");
+const profileRouter = require("./routes/profile");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static HTML pages
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/static", express.static(path.join(__dirname, "static")));
+app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
+
+// Profile + auth routes
+app.use("/api/auth", profileRouter);
+app.use("/api/profile", profileRouter);
 
 // ─────────────────────────────────────────────
 // EVENTS
@@ -117,9 +125,9 @@ app.post("/api/events/:id/rsvp", async (req, res) => {
   try {
     const db = await getDb();
     const eventId = parseInt(req.params.id);
-    const { name, email, phone } = req.body;
+    const { name, email: userEmail, phone } = req.body;
 
-    if (!name || !email) {
+    if (!name || !userEmail) {
       return res.status(400).json({ error: "Name and email are required" });
     }
 
@@ -147,9 +155,18 @@ app.post("/api/events/:id/rsvp", async (req, res) => {
     try {
       db.run(
         `INSERT INTO rsvps (event_id, name, email, phone) VALUES (?, ?, ?, ?)`,
-        [eventId, name, email.toLowerCase(), phone || null]
+        [eventId, name, userEmail.toLowerCase(), phone || null]
       );
       save();
+
+      // Send confirmation email (non-blocking)
+      const eventResult = db.exec(`SELECT * FROM events WHERE id = ${eventId}`);
+      if (eventResult.length) {
+        const cols = eventResult[0].columns;
+        const ev = Object.fromEntries(cols.map((c, i) => [c, eventResult[0].values[0][i]]));
+        email.sendRsvpConfirmation({ name, email: userEmail.toLowerCase(), event: ev });
+      }
+
       res.status(201).json({ message: "RSVP confirmed! See you at the run." });
     } catch (dupErr) {
       // SQLite UNIQUE constraint violation
@@ -215,9 +232,11 @@ app.post("/api/routes", async (req, res) => {
     );
     save();
 
-    res
-      .status(201)
-      .json({ message: "Route submitted for review. Thanks for contributing!" });
+    email.sendRouteSubmissionAlert({
+      route: { name, distance_miles, difficulty, description, submitted_by },
+    });
+
+    res.status(201).json({ message: "Route submitted for review. Thanks for contributing!" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to submit route" });
@@ -228,32 +247,9 @@ app.post("/api/routes", async (req, res) => {
 // MEMBERS
 // ─────────────────────────────────────────────
 
-// POST /api/members — join the club / get member kit
-app.post("/api/members", async (req, res) => {
-  try {
-    const db = await getDb();
-    const { name, email } = req.body;
-
-    if (!name || !email) {
-      return res.status(400).json({ error: "Name and email are required" });
-    }
-
-    try {
-      db.run(`INSERT INTO members (name, email) VALUES (?, ?)`, [
-        name,
-        email.toLowerCase(),
-      ]);
-      save();
-      res.status(201).json({
-        message: "Welcome to Elite Run Club! Check your email for next steps.",
-      });
-    } catch (dupErr) {
-      res.status(409).json({ error: "You're already a member!" });
-    }
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to register member" });
-  }
+// POST /api/members — legacy shim, now delegates to /api/auth/register
+app.post("/api/members", (req, res) => {
+  res.redirect(307, "/api/auth/register");
 });
 
 // ─────────────────────────────────────────────
@@ -265,6 +261,7 @@ const pages = {
   "/events": "events.html",
   "/routes": "routes.html",
   "/community": "community.html",
+  "/profile": "profile.html",
 };
 
 Object.entries(pages).forEach(([route, file]) => {

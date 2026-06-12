@@ -225,7 +225,7 @@
 <p class="font-body-md text-body-md text-on-surface-variant mb-6">A steady state endurance run along the scenic river path. Pacers available for 5:30 to 7:00/km.</p>
 <div class="mt-auto flex items-center justify-between">
 <div class="text-on-surface-variant font-label-md">Sunday • 7 AM</div>
-<button class="bg-primary text-on-primary px-4 py-2 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all">RSVP</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all">Join</button>
 </div>
 </div>
 <!-- List View Component for Upcoming Events -->
@@ -293,7 +293,7 @@
 </div>
 <div class="flex flex-col gap-3">
 <h6 class="font-label-md text-primary uppercase tracking-wider mb-2">Community</h6>
-<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="https://www.instagram.com/elite.run.club/">Instagram</a>
 <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">WhatsApp Groups</a>
 <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Local Chapters</a>
 </div>
@@ -342,7 +342,7 @@ filterBtns.forEach(btn => {
 // Wire all RSVP / "Count Me In" / "Join Session" buttons
 document.querySelectorAll('button').forEach(btn => {
   const text = btn.textContent.trim();
-  if (['RSVP', 'Count Me In', 'Join Session'].includes(text)) {
+  if (['Join', 'Count Me In', 'Join Session'].includes(text)) {
     // Find nearest event card to get event context
     btn.addEventListener('click', () => {
       const card = btn.closest('[class*="card"], section, article, div[class*="bg-surface"]') || btn.parentElement;
@@ -365,7 +365,7 @@ if (highlightId) {
   // Scroll to and pulse the first RSVP button after a short delay
   setTimeout(() => {
     const rsvpBtns = [...document.querySelectorAll('button')].filter(b =>
-      ['RSVP', 'Count Me In', 'Join Session'].includes(b.textContent.trim())
+      ['Join', 'Count Me In', 'Join Session'].includes(b.textContent.trim())
     );
     if (rsvpBtns[0]) {
       rsvpBtns[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -398,7 +398,7 @@ async function showRsvpModal(eventId, eventTitle) {
     <div style="background:#fff;border-radius:20px;padding:32px;width:90%;max-width:420px;position:relative;">
       <button onclick="document.getElementById('erc-rsvp-modal').style.display='none'"
         style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;">✕</button>
-      <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:4px;">RSVP</h2>
+      <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:4px;">Join This Run</h2>
       <p id="erc-rsvp-event-name" style="color:#2B4A8C;font-weight:600;margin-bottom:20px;">${eventTitle || 'Upcoming Run'}</p>
       <input id="erc-rsvp-name" placeholder="Your name" style="width:100%;border:1px solid #ddd;border-radius:12px;padding:12px;margin-bottom:12px;font-size:1rem;box-sizing:border-box;">
       <input id="erc-rsvp-email" type="email" placeholder="Email address" style="width:100%;border:1px solid #ddd;border-radius:12px;padding:12px;margin-bottom:12px;font-size:1rem;box-sizing:border-box;">
