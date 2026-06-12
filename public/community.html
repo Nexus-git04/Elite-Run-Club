@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Stories | Elite Run Club</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#1f4682",
+                      "on-surface-variant": "#434750",
+                      "tertiary": "#313437",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-fixed": "#001a40",
+                      "on-surface": "#191c1e",
+                      "tertiary-container": "#474b4d",
+                      "primary": "#00336e",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#75a5ff",
+                      "surface-bright": "#f7f9fb",
+                      "primary-fixed-dim": "#acc7ff",
+                      "on-background": "#191c1e",
+                      "surface-variant": "#e0e3e5",
+                      "surface-container-low": "#f2f4f6",
+                      "on-tertiary-fixed-variant": "#43474a",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-dim": "#acc7ff",
+                      "on-secondary-container": "#00397c",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#eceef0",
+                      "surface-container-highest": "#e0e3e5",
+                      "primary-container": "#244a86",
+                      "secondary": "#235cb1",
+                      "primary-fixed": "#d7e2ff",
+                      "surface": "#f7f9fb",
+                      "on-primary-fixed": "#001a40",
+                      "outline-variant": "#c3c6d1",
+                      "secondary-fixed": "#d7e2ff",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#e0e3e5",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "surface-tint": "#3a5e9b",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#99bbff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#747781",
+                      "on-tertiary": "#ffffff",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-tertiary-fixed": "#181c1e",
+                      "inverse-surface": "#2d3133",
+                      "background": "#f7f9fb",
+                      "surface-container-high": "#e6e8ea",
+                      "on-secondary-fixed-variant": "#004492",
+                      "inverse-primary": "#acc7ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "container-padding": "24px",
+                      "base": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "title-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-container-low shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-7xl mx-auto">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim"><div class="flex items-center gap-3"><img alt="Elite Run Club Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ"/><span>Elite Run Club</span></div></div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md text-body-md" href="/">Home</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md text-body-md" href="/events">Runs &amp; Events</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md text-body-md" href="/routes">Local Routes</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="/community">Community</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md text-body-md" href="#">Merch</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95 duration-100 ease-in-out">Join Next Run</button>
+<img alt="Member Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary" data-alt="A professional headshot of a smiling female runner with athletic gear. The lighting is soft and natural, emphasizing her friendly and approachable expression. The background is a blurred urban park at sunrise, maintaining a clean, modern aesthetic that aligns with a high-end community-driven sports brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_UYwhGjGD8JEhhsU6Cj4utGoXqmxWLgdyjRdEh6NO4Z9jdURtYNb9k1d5PAMHB-d8SdttXij6Ibuuqq-pMMzfWE0S0qwd-s4oeS9kU5xlTKEYqpHbslxMTUMzRX2jP1Piela5sS7dMVzC4ned9JpvAY7QnC17C81j-ZXpdY3b--695O30vzILNLPzTX9gtQmbkoaNWeUPymWo4iGNzZIMebAQr21sZHxE7T_Q_qWi4bcrsLFy2D8nhvqSunjO5Zmry7pY9Yy_ldk"/>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Hero Section -->
+<header class="mb-16 text-center md:text-left">
+<div class="inline-flex items-center px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined mr-2 text-[18px]">group</span>
+                Member Collective
+            </div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6">The Faces Behind the Miles.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Elite Run Club is more than a training schedule. It's a living tapestry of personal victories, shared struggles, and lifelong friendships forged on the pavement.</p>
+</header>
+<!-- Member Spotlight (Second Edition Feature) -->
+<section class="mb-24">
+<div class="relative overflow-hidden rounded-[24px] bg-primary text-on-primary shadow-2xl flex flex-col md:flex-row">
+<div class="w-full md:w-1/2 relative min-h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPoQ4bsTco9O5lsgUqQx38uo56H95QVCbaMmvaykyVKcz6hbE5F1QHDSvYnzWCSPPuBChJndSwmEWpOtUGycgAjndXz1HQFJYcu8-Gb_65Q-KJ543JHZadDQjaIGAZMu9WRNjWpvboAGM7tPuTepDU8R58hmyUn7oPY2x6idMRiot9_S_Ml7L5kJyN_EonpA4x_pBftwG1Aq1llMBDfvnEGYjt67-6znVoNRkRGY4sYjJYAJRzNCmRIWPL59VRuNwxHsHqPsCKmYI" alt="Second Edition runners at Janeshwar Mishra Park"/>
+<div class="absolute top-6 left-6">
+<span class="bg-surface-container-lowest/20 backdrop-blur-md px-4 py-1.5 rounded-full font-label-md text-label-md text-on-primary">Second Edition · 22 June 2025</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md text-label-md tracking-widest uppercase">Flagship Event</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-4 text-on-primary">250 Runners. One Morning.</h2>
+<p class="font-body-md text-body-md mb-8 opacity-90 leading-relaxed">
+Janeshwar Mishra Park, Gomti Nagar. The Second Edition of the Elite 5K Run brought together nearly 250 runners from across the city — a movement built on one message: <em>"Don't scroll your life away. Run it instead."</em> Supported by Lucknow Falcons, Decathlon, Knock Sense, CM Yuva Yojna, and Mouth Wide Shut bakery.
+</p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-white/10 border border-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">₹5000 First Prize</span>
+<span class="bg-white/10 border border-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">Top 15 Goodies</span>
+<span class="bg-white/10 border border-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">Women's Category</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Story Bento Grid -->
+<section class="mb-24">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Club Chronicles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Milestones and moments from Lucknow's running community.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Story Card — Pickleball -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-[24px] bg-surface-container shadow-sm hover:shadow-md transition-all">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent z-10"></div>
+<img class="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMW0C1LYF_fHIT6w6vFuTY6G_5cfKxeuhBxUOC0G9urVQGD--I_yyTYqMeSvQx5WcaSPLDByRRItGNg7VQTX50YiWQjjXb4zKOTPOjnYbNBOlGCXeSsRxNtKGpV6nUk2f1kMZVRBDQvLYYYSgim0Goxh-QLuAxNb7SGhMTX0FpyMOjMI5wdlKXsaWdGcAGP2scXn7e2f1KCFKmcBaWqbryCD41PZtb4E4vpsUss6_X1xLK0FWfpLP2lq141SEq23TuEKIxjCu4dNo" alt="Pickleball Tournament at Pickleball Café"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary px-3 py-1 rounded-full text-[12px] font-bold text-white uppercase tracking-tighter">Season 2</span>
+<span class="bg-primary-container px-3 py-1 rounded-full text-[12px] font-bold text-white uppercase tracking-tighter">Beyond Running</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-white mb-2">The Pickleball Chapter</h4>
+<p class="text-white/80 font-body-md max-w-lg mb-6">28 December 2025 · Pickleball Café, Mill Road. In collaboration with Athrise India, Elite stepped off the track and onto the court — a deliberate experiment in movement, community, and play.</p>
+<p class="text-white/60 font-label-md italic">"Not every story we tell is measured in kilometres."</p>
+</div>
+</div>
+<!-- Small Card — Season 1 Growth -->
+<div class="md:col-span-4 p-8 rounded-[24px] bg-surface-container-low border border-outline-variant flex flex-col justify-between hover:border-primary transition-colors">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-3">Club Season 1: 6 → 103</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+First session at Botanical Garden, 22 September 2024 — 6 runners showed up. By Week 15 on 18 May 2025, that number had grown to 103 participants. A weekly running culture built from scratch.
+</p>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<span class="text-primary font-label-md">Sept 2024 – May 2025</span>
+<span class="material-symbols-outlined text-outline">directions_run</span>
+</div>
+</div>
+<!-- Small Card — First Edition -->
+<div class="md:col-span-4 p-8 rounded-[24px] bg-surface-container-low border border-outline-variant hover:border-primary transition-colors">
+<div class="mb-6 h-12 w-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">emoji_events</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-3">Where It All Began</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+14 July 2024, Marine Drive, Lucknow. The inaugural Elite Marathon '24 — a 5K designed to "turn miles into memories." The run that started it all.
+</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-sm">location_on</span>
+</div>
+<span class="text-on-surface-variant font-label-md">Marine Drive, Lucknow</span>
+</div>
+</div>
+<!-- Medium Card — Season 2 -->
+<div class="md:col-span-8 bg-surface-container-high rounded-[24px] p-8 flex flex-col md:flex-row gap-8 items-center overflow-hidden">
+<div class="md:w-1/2">
+<h4 class="font-headline-lg text-headline-lg text-primary mb-4">Club Season 2</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+Season 2 kicked off on 13 July 2025 at Janeshwar Mishra Park, Gate 7. The second session moved to YOLO Sports Arena, followed by an exclusive basketball session — reflecting the club's growing vision beyond running.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">Janeshwar Park</span>
+<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">YOLO Sports Arena</span>
+<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">Basketball</span>
+</div>
+</div>
+<div class="md:w-1/2 h-full">
+<img class="rounded-[16px] shadow-lg object-cover h-48 w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHazRD4jqcj8TTcoE_ZQpk4RzBJGRELZ4eJhf4hiPiC6EvBWcRidivMoc2ZnFMFXeh1OIGzo_5VgEGKE3UGdk9JfIK5qslDZScCLaMN1eB9bI4SyUBE99pUgK16NWxLVCg-tibdR3BOl87JmxZmGwugk3C26p52cdYofeI5OwyPa0-lpVl3Gn6PaE3lYhA_pjr5V5jVzemLjP_mdx4f5Tr4kHFFY7WRWOS6loQT3JEomOWgVlcM9mPKMjyleM2FW75b-yyvwTl90w" alt="Club session runners"/>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Community Outreach Section -->
+<section class="mb-24">
+<div class="mb-10">
+<div class="inline-flex items-center gap-2 mb-3 text-primary bg-primary-fixed/30 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="font-bold text-xs tracking-widest uppercase">Beyond the Run</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Community Outreach</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Elite Run Club doesn't just run — it shows up. A snapshot of the club's community work across Lucknow.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- INAAM NGO -->
+<div class="bg-surface-container-lowest rounded-[20px] p-7 border border-outline-variant/30 hover:border-primary hover:shadow-md transition-all">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed flex items-center justify-center mb-5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">27 Apr 2025</p>
+<h4 class="font-title-md text-on-surface mb-3">INAAM NGO Food Drive</h4>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">In collaboration with INAAM, a student-led NGO, club members distributed food boxes near Hanuman Setu, Lucknow.</p>
+</div>
+<!-- Muskaan Foundation -->
+<div class="bg-surface-container-lowest rounded-[20px] p-7 border border-outline-variant/30 hover:border-primary hover:shadow-md transition-all">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed flex items-center justify-center mb-5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">19 May 2025</p>
+<h4 class="font-title-md text-on-surface mb-3">Muskaan Foundation</h4>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">Visited a primary school with the Muskaan Foundation — distributed stationery, food, and ran recreational field activities for children.</p>
+</div>
+<!-- Community Bhandara -->
+<div class="bg-surface-container-lowest rounded-[20px] p-7 border border-outline-variant/30 hover:border-primary hover:shadow-md transition-all">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed flex items-center justify-center mb-5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+</div>
+<p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">31 May 2025</p>
+<h4 class="font-title-md text-on-surface mb-3">Community Bhandara</h4>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">A large-scale bhandara at Parivartan Chowk where nearly 1,000 people gathered as part of a collective food service initiative.</p>
+</div>
+<!-- The Midnight Bulletin -->
+<div class="bg-surface-container-lowest rounded-[20px] p-7 border border-outline-variant/30 hover:border-primary hover:shadow-md transition-all">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed flex items-center justify-center mb-5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">elderly</span>
+</div>
+<p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">2 Jun 2025</p>
+<h4 class="font-title-md text-on-surface mb-3">The Midnight Bulletin</h4>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">Visited Paul Mercy Home, an old age home in Lucknow, with The Midnight Bulletin. Finger painting, interactive sessions, and distributed goodies for residents.</p>
+</div>
+</div>
+</section>
+<!-- Instagram Integration -->
+<section class="mb-24">
+<div class="text-center mb-12">
+<div class="flex items-center justify-center gap-2 mb-2">
+<span class="material-symbols-outlined text-error">photo_camera</span>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Live from the Club</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">#EliteRunClubCollective</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<div class="aspect-square rounded-xl overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up shot of several pairs of colorful high-performance running shoes in a circle on a track, signifying team unity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHazRD4jqcj8TTcoE_ZQpk4RzBJGRELZ4eJhf4hiPiC6EvBWcRidivMoc2ZnFMFXeh1OIGzo_5VgEGKE3UGdk9JfIK5qslDZScCLaMN1eB9bI4SyUBE99pUgK16NWxLVCg-tibdR3BOl87JmxZmGwugk3C26p52cdYofeI5OwyPa0-lpVl3Gn6PaE3lYhA_pjr5V5jVzemLjP_mdx4f5Tr4kHFFY7WRWOS6loQT3JEomOWgVlcM9mPKMjyleM2FW75b-yyvwTl90w"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative" style="transform: translateY(0px);">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A dramatic shot of a runner's silhouette against a fiery orange and purple sunset over a coastal running path." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDa_8bOe-KC-853Mhruq4NFUiQ0qiGf9KV7nKnUBX5FdYgjfTVbhvr16y2VjBKjKqYRpCACELaw134WJ3vqZObdMD-1reLIwtg6Z9Gk0GdiWKxsQV22TUeV17I-dzQUaqFLEge3UVRdgGa6_atUG3-XjtX_H0B4dYi3KJSxDcWYaJ_LIF_dEZRrLSGEHnYEOFRwMk0eHTw2TvUBuwShuHZhNTJaj_nhh0ZekN6Qf9f4cMsveyexeI9LphbykNAvNcagUNHnYq6l90"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A group of runners sharing a sweaty post-run selfie, holding coffee cups and smiling at the camera in a modern urban cafe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Rb6jk6c0_FH4leEQqp1BIs1hLtgZoMaY9Cazwd7SrfpT2yKA4lvKhfNEdlBwWBhNXOpJVCc6c4gOyA-ko9I3TQ4Y1eTVNP9O9aZxngjLKv8orGgQBFRZ7huZ74LfTovqv2AbYyNZzqy3WCP3FGCqC72uaHCoxTOauSxBpPuS2TsqEpGlg3GQgPLuHpBVznih2sO6Gh8hq47ytCwmg3ypV3ANqtiDQjGYnYkqlWpEYdaJ6CewgzdQenJPncbpoUIzHeG3PMPh6ls"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A scenic view of a misty forest trail with a lone runner in the distance, capturing the tranquility and personal focus of trail running." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjYnPNl7goTrkCN_i8hj16Z3cKJeNqgksJh8Vve_c0ONBeBLKykphBXqYuaWlSPG3ui0z_2UNO4BUJ1r927AyUx9T4eRBIzjzjvD2v26N8Hi4EQDG6YIvmeLdri4eaaL3rRyUsbRoodLAqGZL3W7OoVB69abpBS9oTZGUp1yNBNZYnGcOh6lKmiDYi5SP3ZVB9-CgCpVXsQIjk2tHiSsIm7lNlnfy7lBOXZ6f3oziERnjUi7ce-KwdXH22aSsjNx6y4AgS1Ax6h8A"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Brightly colored running jerseys hanging on a locker room bench, conveying preparation and the professional feel of the club." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcJZi0z0PNnmzqYGMgMRVX0kW3TtNjSOxpmn66LtQJrF1w4hDS0zczwXd_qud1F9xZZNRBHzq5D5ZgPy3eqL0dsB2X2_DLfgfDZUVA8yIceAQYu_ffcQbqc1ZuVQpTj2Fq-CGw2Kb4gwGxtu1CZEe8O6zOsQobN2NdEukzonaldo33YNdqTW-glnPGzvTpMWi1yA7APmPrm3soQIsXp6xejtsmmlzkWYdp8Ava9A4Vm0QD5Oojrr0zZTvVy14q3FFZaX8PmBBeLFs"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of a runner's hand wearing a digital sports watch showing an impressive activity summary, with a blurred outdoor track behind." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2KvWZ6RlQPodrH8g4mIJa-vixngMLJsENgL3B8OLFN5kVlOAqALNcd8ZyXhgtjrPaOmQteu40EGAoGNbEjbH53bcKhMTrq0PynJqHlccqqMCoTUsIbCNhdmK5QxGZxdkqN6kC6u2oj_erIY-qvsJMJCU9ggKKcHVDujTL5CFN8tn1_78S8jE1w6n8KhPMmPcsAivRvp24bBxwbxv7BnCqTyMhbYP_7EYhX6yv8kF28JFVbRjah75VoSb8w9_SFA5--j3ux1Bm8A"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Digital Community Join CTA -->
+<section class="mb-12">
+<div class="bg-surface-container-lowest rounded-[32px] p-12 shadow-sm border border-primary-fixed overflow-hidden relative">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-secondary-fixed rounded-full opacity-20 blur-3xl"></div>
+<div class="absolute -left-20 -bottom-20 w-64 h-64 bg-primary-fixed rounded-full opacity-20 blur-3xl"></div>
+<div class="relative z-10 text-center max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Stay Connected Beyond the Run</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">Our digital hubs are where the magic happens between meetups. Swap gear advice, find training buddies, or just share your morning miles.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<a class="flex items-center justify-center gap-4 text-white px-8 py-4 rounded-2xl hover:brightness-110 transition-all active:scale-95 shadow-md bg-error" href="#">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>photo_camera</span>
+<span class="font-title-md text-title-md">Follow on Instagram</span>
+</a>
+<a class="flex items-center justify-center gap-4 bg-[#25D366] text-white px-8 py-4 rounded-2xl hover:brightness-110 transition-all active:scale-95 shadow-md bg-error" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-title-md text-title-md">WhatsApp Groups</span>
+</a>
+</div>
+<p class="mt-8 text-on-surface-variant font-label-md">250+ runners at Edition 2 · Season 1 grew from 6 to 103 members.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low dark:bg-surface-dim">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-12 max-w-7xl mx-auto border-t border-outline-variant">
+<div class="flex flex-col gap-4">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim"><div class="flex items-center gap-3"><img alt="Elite Run Club Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ"/><span>Elite Run Club</span></div></div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container">© 2026 Elite Run Club. Join the collective pursuit.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-title-md text-title-md text-primary dark:text-primary-fixed-dim mb-2">Community</h5>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md" href="#">Instagram</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md" href="#">WhatsApp Groups</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md" href="#">Local Chapters</a>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-title-md text-title-md text-primary dark:text-primary-fixed-dim mb-2">Legal</h5>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md" href="#">Member Stories</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0px)';
+            });
+        });
+    </script>
+</body></html>
