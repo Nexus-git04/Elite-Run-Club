@@ -1,0 +1,19 @@
+p{
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.68);
+}
+input{
+  width:300px;
+  border: 2px solid #363636;
+  border-radius: 3px;
+}
+button{
+  width: 300px;
+  height: 45px;
+  border: none;
+  border-radius: 50px;
+  background-color: #0c6bbe;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+ p{
+    font-family: Montserrat, sans-serif;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .delivery{
+    text-decoration: underline;
+  }
+  .order{
+    text-align: center;
+  }
