@@ -109,25 +109,401 @@
             opacity: 1 !important;
             transform: translateY(0) !important;
         }
+
+    /* ── Buttons ─────────────────────── */
+    .btn-primary-nav {
+      display: none; background: #00336e; color: #fff;
+      padding: 0.625rem 1.5rem; border-radius: 9999px;
+      font-size: 0.875rem; font-weight: 600; border: none; cursor: pointer;
+      transition: all 0.3s;
+    }
+    @media(min-width:640px){ .btn-primary-nav { display: block; } }
+    .btn-primary-nav:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: translateY(-1px); }
+    .btn-primary-nav:active { transform: translateY(0); }
+
+    .btn-hero-primary {
+      width: 100%; background: #d7e2ff; color: #001a40;
+      padding: 1rem 2.5rem; border-radius: 9999px;
+      font-size: 1.25rem; font-weight: 600; border: none; cursor: pointer;
+      transition: all 0.3s;
+    }
+    @media(min-width:640px){ .btn-hero-primary { width: auto; } }
+    .btn-hero-primary:hover { background: #fff; transform: scale(1.05); box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
+
+    .btn-hero-ghost {
+      width: 100%; background: rgba(255,255,255,0.1); color: #fff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 1rem 2.5rem; border-radius: 9999px;
+      font-size: 1.25rem; font-weight: 600; cursor: pointer;
+      transition: all 0.3s; backdrop-filter: blur(12px);
+    }
+    @media(min-width:640px){ .btn-hero-ghost { width: auto; } }
+    .btn-hero-ghost:hover { background: rgba(255,255,255,0.2); }
+
+    .btn-join {
+      width: 100%; background: #00336e; color: #fff;
+      padding: 1rem 3rem; border-radius: 9999px;
+      font-size: 1.25rem; font-weight: 600; border: none; cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,51,110,0.2);
+      transition: all 0.3s;
+    }
+    @media(min-width:768px){ .btn-join { width: auto; } }
+    .btn-join:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.15); background: #244a86; color: #99bbff; }
+    .btn-join:active { transform: scale(0.97); }
+
+    .btn-member-kit {
+      background: #fff; color: #00336e;
+      padding: 1rem 3rem; border-radius: 9999px;
+      font-weight: 700; border: none; cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s; position: relative; z-index: 10;
+    }
+    .btn-member-kit:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.2); transform: translateY(-2px); }
+
+    /* ── Stat icon box ───────────────── */
+    .stat-icon {
+      width: 5rem; height: 5rem; border-radius: 1.5rem;
+      background: #e6e8ea; display: flex; align-items: center;
+      justify-content: center; color: #00336e;
+      margin-bottom: 2rem; transition: all 0.5s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .group:hover .stat-icon { background: #00336e; color: #fff; }
+    .stat-icon-a { transform: rotate(0deg); }
+    .stat-icon-b { transform: rotate(0deg); }
+    .group:hover .stat-icon-a { transform: rotate(6deg); }
+    .group:hover .stat-icon-b { transform: rotate(-6deg); }
+
+    /* ── Why join feature icon ───────── */
+    .feature-icon {
+      flex-shrink: 0; width: 3.5rem; height: 3.5rem;
+      background: #e6e8ea; border-radius: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      color: #00336e; transition: all 0.3s;
+    }
+    .group:hover .feature-icon { background: #00336e; color: #fff; }
+
+    /* ── Timeline node ───────────────── */
+    .timeline-node {
+      display: none; width: 2.5rem; height: 2.5rem; border-radius: 9999px;
+      background: #00336e; color: #fff;
+      align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.875rem;
+      z-index: 10; flex-shrink: 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    @media(min-width:768px){ .timeline-node { display: flex; } }
+
+    /* ── Timeline badge ──────────────── */
+    .timeline-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 0.75rem; color: #00336e;
+      background: rgba(215,226,255,0.3);
+      padding: 0.25rem 0.75rem; border-radius: 9999px;
+    }
+    .timeline-badge-reverse { flex-direction: row-reverse; }
+
+    /* ── Timeline card ───────────────── */
+    .timeline-card {
+      background: #f2f4f6; border-radius: 1rem;
+      padding: 1.5rem; border: 1px solid rgba(195,198,209,0.3);
+    }
+
+    /* ── Tag pill ────────────────────── */
+    .tag {
+      background: rgba(215,226,255,0.4); color: #00336e;
+      font-size: 0.75rem; font-weight: 700;
+      padding: 0.25rem 0.75rem; border-radius: 9999px;
+    }
+
+    /* ── Profile avatar ring ─────────── */
+    .avatar-ring {
+      padding: 2px; border: 2px solid #d7e2ff;
+      border-radius: 9999px; cursor: pointer;
+      transition: border-color 0.2s; display: inline-block;
+    }
+    .avatar-ring:hover { border-color: #00336e; }
+
+    /* ── Nav social icon ─────────────── */
+    .social-icon {
+      width: 3rem; height: 3rem; border-radius: 9999px;
+      background: #e6e8ea; display: flex;
+      align-items: center; justify-content: center;
+      color: #00336e; transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      text-decoration: none;
+    }
+    .social-icon:hover { background: #00336e; color: #fff; }
+
+    /* ── Layout ──────────────────────── */
+    .page-body {
+      background: #f7f9fb; color: #191c1e;
+      font-size: 1rem; line-height: 1.5rem; font-weight: 400;
+      overflow-x: hidden;
+    }
+    .page-body ::selection { background: #75a5ff; color: #00397c; }
+
+    .site-header {
+      width: 100%; position: fixed; top: 0; z-index: 60;
+      transition: all 0.5s; border-bottom: 1px solid rgba(195,198,209,0.3);
+    }
+    .nav-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem; max-width: 80rem; margin: 0 auto;
+    }
+    @media(min-width:768px){ .nav-inner { padding: 1rem 4rem; } }
+
+    .nav-logo {
+      font-size: 2rem; font-weight: 700; color: #00336e;
+      letter-spacing: -0.02em; display: flex; align-items: center;
+      text-decoration: none;
+    }
+
+    /* ── Hero ────────────────────────── */
+    .hero-section {
+      position: relative; height: 90vh; min-height: 700px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-text {
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 700; color: #fff;
+      margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem); color: #d7e2ff;
+      margin-bottom: 2.5rem; opacity: 0.95;
+      max-width: 42rem; margin-left: auto; margin-right: auto;
+      line-height: 1.75;
+    }
+    .hero-content {
+      position: relative; z-index: 20; text-align: center;
+      padding: 4rem 1rem 0;  max-width: 56rem;
+    }
+    .hero-bg-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(1.05);
+      animation: pulse 10s ease-in-out infinite;
+    }
+    .hero-scroll-hint {
+      position: absolute; bottom: 3rem; left: 50%;
+      transform: translateX(-50%); z-index: 20;
+      animation: bounce 1s infinite; display: none;
+    }
+    @media(min-width:768px){ .hero-scroll-hint { display: block; } }
+
+    /* ── Event card ──────────────────── */
+    .event-card {
+      background: #fff; border-radius: 1.5rem;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+      overflow: hidden; border: 1px solid rgba(195,198,209,0.3);
+    }
+    .event-date-block {
+      background: #244a86; color: #99bbff;
+      padding: 2rem; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-width: 180px;
+      border-bottom: 1px solid rgba(195,198,209,0.2);
+    }
+    @media(min-width:1024px){
+      .event-date-block {
+        border-bottom: none;
+        border-right: 1px solid rgba(195,198,209,0.2);
+      }
+    }
+    .event-body {
+      flex-grow: 1; padding: 2rem 2.5rem;
+      display: flex; flex-direction: column; align-items: center; gap: 2rem;
+    }
+    @media(min-width:768px){ .event-body { flex-direction: row; } }
+    .event-meta {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: center; gap: 0.5rem 1.5rem;
+      color: #434750; font-weight: 500;
+    }
+    @media(min-width:768px){ .event-meta { justify-content: flex-start; } }
+
+    /* ── Section layouts ─────────────── */
+    .section-std {
+      padding: 8rem 1rem; max-width: 80rem; margin: 0 auto;
+    }
+    @media(min-width:768px){ .section-std { padding: 8rem 4rem; } }
+
+    .section-full {
+      padding: 8rem 0;
+    }
+    .section-full-inner {
+      padding: 0 1rem; max-width: 80rem; margin: 0 auto;
+    }
+    @media(min-width:768px){ .section-full-inner { padding: 0 4rem; } }
+
+    .section-event {
+      position: relative; z-index: 30; margin-top: -6rem;
+      padding: 0 1rem; max-width: 72rem; margin-left: auto; margin-right: auto;
+    }
+    @media(min-width:768px){ .section-event { padding: 0 4rem; } }
+
+    .why-join-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 5rem; align-items: center;
+      padding: 0 1rem; max-width: 80rem; margin: 0 auto;
+    }
+    @media(min-width:768px){ .why-join-grid { padding: 0 4rem; } }
+    @media(min-width:1024px){ .why-join-grid { grid-template-columns: 1fr 1fr; gap: 8rem; } }
+
+    /* ── Member badge card ───────────── */
+    .member-card {
+      background: #244a86; border-radius: 3rem;
+      padding: 3rem; text-align: center;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+      position: relative; overflow: hidden;
+    }
+    @media(min-width:768px){ .member-card { padding: 4rem; } }
+    .member-card-overlay {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at center, rgba(0,51,110,0.2), transparent);
+      opacity: 0.5;
+    }
+    .member-badge-img {
+      width: 14rem; height: 14rem; margin: 0 auto 2.5rem;
+      transition: transform 0.7s;
+      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.3));
+      position: relative; z-index: 10;
+    }
+    .member-card:hover .member-badge-img { transform: scale(1.1); }
+
+    /* ── Glow blob ───────────────────── */
+    .glow-blob {
+      position: absolute; top: -5rem; left: -5rem;
+      width: 20rem; height: 20rem;
+      background: rgba(215,226,255,0.2);
+      border-radius: 9999px; filter: blur(100px); z-index: -1;
+    }
+
+    /* ── Timeline ────────────────────── */
+    .timeline-line {
+      display: none; position: absolute; left: 50%;
+      transform: translateX(-1px); top: 0; bottom: 0;
+      width: 1px; background: rgba(195,198,209,0.4);
+    }
+    @media(min-width:768px){ .timeline-line { display: block; } }
+
+    .timeline-row {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 2.5rem;
+    }
+    @media(min-width:768px){ .timeline-row { flex-direction: row; gap: 4rem; } }
+
+    /* ── Section headings ────────────── */
+    .heading-xl { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #191c1e; letter-spacing: -0.02em; }
+    .heading-lg { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: #191c1e; letter-spacing: -0.02em; }
+    .heading-md { font-size: clamp(1.25rem, 2.5vw, 1.875rem); font-weight: 700; color: #191c1e; letter-spacing: -0.02em; }
+    .stat-number { font-size: 2.25rem; font-weight: 900; color: #191c1e; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+
+    /* ── Nav link ────────────────────── */
+    .nav-link { color: #434750; font-weight: 500; text-decoration: none; transition: color 0.15s; }
+    .nav-link:hover { color: #00336e; }
+    .nav-link-active { color: #00336e; font-weight: 700; border-bottom: 2px solid #00336e; padding-bottom: 2px; text-decoration: none; }
+
+    /* ── Footer ──────────────────────── */
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 3rem; padding: 5rem 1.5rem;
+      max-width: 80rem; margin: 0 auto;
+    }
+    @media(min-width:768px){ .footer-grid { grid-template-columns: repeat(4,1fr); padding: 5rem 4rem; } }
+
+    .footer-bottom {
+      padding: 2.5rem 1.5rem; max-width: 80rem; margin: 0 auto;
+      border-top: 1px solid rgba(195,198,209,0.1);
+    }
+    @media(min-width:768px){ .footer-bottom { padding: 2.5rem 4rem; } }
+    .footer-bottom-inner {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1rem; color: #434750; font-size: 0.875rem; font-weight: 500;
+    }
+    @media(min-width:768px){ .footer-bottom-inner { flex-direction: row; justify-content: space-between; } }
+
+    /* ── Inline event badge ───────────── */
+    .event-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1rem; color: #00336e;
+      background: rgba(215,226,255,0.3);
+      padding: 0.25rem 0.75rem; border-radius: 9999px;
+    }
+
+    /* ── Route/story cards ───────────── */
+    .card-wide {
+      grid-column: span 7;
+      cursor: pointer; overflow: hidden;
+      border-radius: 2rem; position: relative;
+      height: 450px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .card-narrow {
+      grid-column: span 5;
+      cursor: pointer; overflow: hidden;
+      border-radius: 2rem; position: relative;
+      height: 450px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .card-img-zoom {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s;
+    }
+    .group:hover .card-img-zoom { transform: scale(1.1); }
+
+    .card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
+      padding: 2.5rem; display: flex; flex-direction: column; justify-content: flex-end;
+    }
+
+    .card-label {
+      display: inline-block; background: #00336e; color: #fff;
+      font-size: 0.625rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      padding: 0.25rem 0.75rem; border-radius: 9999px;
+      width: fit-content; margin-bottom: 1rem;
+    }
+
+    /* ── Section header row ──────────── */
+    .section-header {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: space-between; margin-bottom: 4rem;
+      text-align: center; gap: 1.5rem;
+    }
+    @media(min-width:768px){
+      .section-header { flex-direction: row; align-items: flex-end; text-align: left; }
+    }
+
+    /* ── View all link ───────────────── */
+    .view-all-link {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      color: #00336e; font-weight: 700;
+      background: #fff; padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.2s; text-decoration: none;
+    }
+    .view-all-link:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<body class="page-body">
 <!-- TopNavBar -->
-<header class="w-full fixed top-0 z-[60] transition-all duration-500 glass-header border-b border-outline-variant/30" id="main-nav">
-<nav class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-7xl mx-auto">
-<a class="font-headline-lg text-headline-lg text-primary tracking-tight flex items-center" href="#"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ" alt="Elite Run Club Logo" class="h-10 w-auto inline-block mr-3 mb-1">Elite Run Club</a>
+<header class="site-header" id="main-nav">
+<nav class="nav-inner">
+<a class="nav-logo" href="#"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ" alt="Elite Run Club Logo" class="h-10 w-auto inline-block mr-3 mb-1">Elite Run Club</a>
 <!-- Desktop Links -->
 <div class="hidden lg:flex items-center gap-8">
-<a class="text-primary font-bold border-b-2 border-primary pb-0.5" href="/">Home</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="/events">Runs &amp; Events</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="/routes">Local Routes</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="/community">Community</a>
+<a class="nav-link-active" href="index.html">Home</a>
+<a class="nav-link" href="events.html">Runs &amp; Events</a>
+<a class="nav-link" href="routes.html">Local Routes</a>
+<a class="nav-link" href="community.html">Community</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300">
+<button class="btn-primary-nav">
                     Join Next Run
                 </button>
-<a href="/profile" title="My Profile" style="display:inline-block;"><div class="p-0.5 border-2 border-primary-fixed rounded-full hover:border-primary transition-colors cursor-pointer">
+<a href="profile.html" title="My Profile" style="display:inline-block;"><div class="avatar-ring">
 <img alt="Member Profile" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0UUsWhn7YSUnE8K04U3V2ejZnlfkuOT5vxevmrD9sHSDAv0QTaNRLawnudDi1iymmaT7VW6SY8VNXhTXXRYpP04ZOL6mOqiURQnqi5SQ1Ayj-IZ435LL6BBUUn19qkbqpN5Epln5N1eBjIVvhhh6G0M7RnS-q5a_XJ8bSRtKIn69HeC4vCCRv09HihESHdWJb-1pgrWjB4z5w1ZxRNcF_l6gtaVd3AugFlu7Yr0DL_KPRVEtq1Q4EWW74uqW68bYWz-Y_GeM1PaA">
 </div></a>
 </div>
@@ -135,48 +511,48 @@
 </header>
 <main>
 <!-- Hero Section -->
-<section class="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden">
+<section class="hero-section">
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 hero-gradient z-10"></div>
-<img alt="Runners at Sunrise" class="w-full h-full object-cover scale-105 animate-[pulse_10s_ease-in-out_infinite]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxbM7_6gzQWSsWs5IXs0oelFwh0Hd3715YnLL1xoXHzyBXxHvzgt_4L1lDnQZqsaPGzmUkE9W84yGYJ6VYhRB30G4p8-HFcHfQ2FW_c6SBRQz4pI6xBOJRfwrglU03ZauD9-fayVnOX7VBo61NQAvK5OrGSbIh_VOb4b17iVzjDXH3T6_zC31pLqunDsc4Tc6thWNMGs7V1OkbIb_SR82A0j3nJ3F_CkKw4aAtflnfRAYyayo78pQAAALL8l7sAkymvLf6RyaSr64">
+<img alt="Runners at Sunrise" class="hero-bg-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxbM7_6gzQWSsWs5IXs0oelFwh0Hd3715YnLL1xoXHzyBXxHvzgt_4L1lDnQZqsaPGzmUkE9W84yGYJ6VYhRB30G4p8-HFcHfQ2FW_c6SBRQz4pI6xBOJRfwrglU03ZauD9-fayVnOX7VBo61NQAvK5OrGSbIh_VOb4b17iVzjDXH3T6_zC31pLqunDsc4Tc6thWNMGs7V1OkbIb_SR82A0j3nJ3F_CkKw4aAtflnfRAYyayo78pQAAALL8l7sAkymvLf6RyaSr64">
 </div>
-<div class="relative z-20 text-center px-margin-mobile md:px-0 max-w-4xl pt-16">
-<h1 class="font-headline-xl text-5xl md:text-7xl text-white mb-6 leading-[1.1] tracking-tight">
+<div class="hero-content">
+<h1 class="hero-text">
                     It's Worth The Hurt!<br>
                 </h1>
-<p class="font-body-lg text-lg md:text-xl text-primary-fixed mb-10 opacity-95 max-w-2xl mx-auto leading-relaxed">
+<p class="hero-sub">
                     More than a club—a collective. Join our local community of runners in the city. Every pace, every person, one shared goal.
                 </p>
 <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-<button class="w-full sm:w-auto bg-primary-fixed text-on-primary-fixed px-10 py-4 rounded-full font-title-md hover:bg-white hover:scale-105 hover:shadow-2xl transition-all duration-300">
+<button class="btn-hero-primary">
                         Become a Member
                     </button>
-<button class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/40 px-10 py-4 rounded-full font-title-md hover:bg-white/20 transition-all duration-300">
+<button class="btn-hero-ghost">
                         View Schedule
                     </button>
 </div>
 </div>
-<div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 animate-bounce hidden md:block">
+<div class="hero-scroll-hint">
 <span class="material-symbols-outlined text-white opacity-50 text-4xl">keyboard_double_arrow_down</span>
 </div>
 </section>
 <!-- Upcoming Event Card (Floating Impact) -->
-<section class="relative z-30 -mt-24 px-4 md:px-margin-desktop max-w-6xl mx-auto reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
-<div class="bg-surface-container-lowest rounded-3xl shadow-2xl overflow-hidden border border-outline-variant/30 group">
+<section class="section-event reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
+<div class="event-card">
 <div class="flex flex-col lg:row items-stretch lg:flex-row">
-<div class="bg-primary-container text-on-primary-container p-8 flex flex-col items-center justify-center min-w-[180px] border-b lg:border-b-0 lg:border-r border-outline-variant/20">
+<div class="event-date-block">
 <span class="text-label-md font-extrabold uppercase tracking-[0.2em] mb-1">Oct</span>
 <span class="text-6xl font-black">21</span>
 <span class="text-label-md font-semibold mt-1">Saturday</span>
 </div>
-<div class="flex-grow p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+<div class="event-body">
 <div class="flex-grow text-center md:text-left">
-<div class="inline-flex items-center gap-2 mb-4 text-primary bg-primary-fixed/30 px-3 py-1 rounded-full">
+<div class="event-badge">
 <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
 <span class="font-bold text-xs tracking-widest uppercase">Upcoming Social Run</span>
 </div>
 <h2 class="font-headline-lg text-3xl md:text-4xl mb-3 text-on-surface">Saturday Morning Social</h2>
-<div class="flex flex-wrap items-center justify-center md:justify-start gap-y-2 gap-x-6 text-on-surface-variant font-medium">
+<div class="event-meta">
 <span class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-xl">schedule</span> 7:00 AM 
                                 </span>
@@ -186,7 +562,7 @@
 </div>
 </div>
 <div class="w-full md:w-auto shrink-0">
-<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-full font-title-md shadow-lg shadow-primary/20 hover:shadow-xl hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 active:scale-95">
+<button class="btn-join">
                                 Join Now
                             </button>
 </div>
@@ -195,79 +571,40 @@
 </div>
 </section>
 <!-- Community Stats -->
-<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
+<section class="section-std reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 <div class="flex flex-col items-center text-center group">
-<div class="w-20 h-20 bg-surface-container-high rounded-3xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-on-primary group-hover:rotate-6 transition-all duration-500 shadow-sm">
+<div class="stat-icon stat-icon-a">
 <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">groups</span>
 </div>
-<h3 class="text-headline-lg text-4xl font-black text-on-surface mb-2 tracking-tight">250+</h3>
+<h3 class="stat-number">250+</h3>
 <p class="text-on-surface-variant font-title-md font-semibold">Runners at Edition 2</p>
 </div>
 <div class="flex flex-col items-center text-center group">
-<div class="w-20 h-20 bg-surface-container-high rounded-3xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-on-primary group-hover:-rotate-6 transition-all duration-500 shadow-sm">
+<div class="stat-icon stat-icon-b">
 <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">directions_run</span>
 </div>
-<h3 class="text-headline-lg text-4xl font-black text-on-surface mb-2 tracking-tight">15</h3>
+<h3 class="stat-number">15</h3>
 <p class="text-on-surface-variant font-title-md font-semibold">Club Season 1 Sessions</p>
 </div>
 <div class="flex flex-col items-center text-center group">
-<div class="w-20 h-20 bg-surface-container-high rounded-3xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-on-primary group-hover:rotate-6 transition-all duration-500 shadow-sm">
+<div class="stat-icon stat-icon-a">
 <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
 </div>
-<h3 class="text-headline-lg text-4xl font-black text-on-surface mb-2 tracking-tight">4+</h3>
+<h3 class="stat-number">4+</h3>
 <p class="text-on-surface-variant font-title-md font-semibold">Community Drives</p>
 </div>
 </div>
 </section>
-<!-- Local Routes (Bento Grid) -->
-<section class="py-32 bg-surface-container-low reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
-<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 text-center md:text-left gap-6">
-<div>
-<h2 class="font-headline-lg text-4xl md:text-5xl text-on-surface mb-4 tracking-tight">Explore Local Routes</h2>
-<p class="text-on-surface-variant text-lg max-w-xl font-medium">Curated by our veteran runners, these routes offer the best urban escapes.</p>
-</div>
-<button class="inline-flex items-center gap-3 text-primary font-bold group px-6 py-3 bg-white rounded-full shadow-sm hover:shadow-md transition-all">
-                        View All Routes <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
-</button>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Featured Route -->
-<div class="lg:col-span-7 group cursor-pointer overflow-hidden rounded-[2rem] relative h-[450px] shadow-xl">
-<img alt="Riverside Loop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDjso8Lqj_OEWZMFIruigLfWGPjRXxP-kbfJcME80pQmraAZs-SXqipQYW9TQplTL1yr_sAdMF2r0Bm5HHju3XQ3iqCuW1aY1CxQK4jkuXSmHw5ro50Roj1ZYyZPHqe0itpObjjBLLSaRkVWkB_L1R8hjHs_3xIFhujYkSApdL_NiUYyFKeA4ehZ7ukIVUhc7DVYdFxBdcRSCrBp0-KFNbYSJcpAwGDXE7dJdAFxTKcZT6wTjtCrr5t3moMCI1eAMQb-7DkP24lYA">
-<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-10 flex flex-col justify-end">
-<span class="bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full w-fit mb-4">Most Popular</span>
-<h3 class="text-white text-3xl md:text-4xl font-bold mb-4 tracking-tight">Gomti Riverside Loop</h3>
-<div class="flex items-center gap-6 text-white/80 font-semibold">
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim">route</span> 5.2 km</span>
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim">trending_up</span> Easy Elevation</span>
-</div>
-</div>
-</div>
-<!-- Route 2 -->
-<div class="lg:col-span-5 group cursor-pointer overflow-hidden rounded-[2rem] relative h-[450px] shadow-xl">
-<img alt="Cantonment Trail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhNAxiBmGNKGA6UeKzQiH3j7XpxVStqado_SQc6vlsBGShbWh_zgMxJpOxyQOq6VaCt-oOzbx9xbmr-K6iqGAz6Rs1iIxJu9xwCihRb9N_aphlLbfarHxrSnSrf0k9jYe_a3a2qKs7wV_-LIM90PVhc-laY_gjga_HpFmRCw6NVnHYgdc55Y9zoaUCBAFqd5zwkENzPtdfFPjTych2UqbOawHNlIZ27wGzMwhSrmrmoNYm7dgvgB6_6n4hPUK3q32fHCGg7M3iAwY">
-<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-10 flex flex-col justify-end">
-<h3 class="text-white text-3xl font-bold mb-4 tracking-tight">Cantonment Forest Trail</h3>
-<div class="flex items-center gap-6 text-white/80 font-semibold">
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim">route</span> 8.5 km</span>
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim">trending_up</span> Moderate</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
 <!-- Why Join & Member Badge -->
-<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+<section class="py-32 bg-surface-container-low reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
+<div class="why-join-grid">
 <div class="relative order-2 lg:order-1">
-<div class="absolute -top-20 -left-20 w-80 h-80 bg-primary-fixed/20 rounded-full blur-[100px] -z-10"></div>
-<h2 class="font-headline-lg text-4xl md:text-5xl text-on-surface mb-12 tracking-tight">Why Elite Run Club?</h2>
+<div class="glow-blob"></div>
+<h2 class="heading-xl mb-12">Why Elite Run Club?</h2>
 <div class="space-y-10">
 <div class="flex gap-6 items-start group">
-<div class="shrink-0 w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<div class="feature-icon">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
 </div>
 <div>
@@ -276,7 +613,7 @@
 </div>
 </div>
 <div class="flex gap-6 items-start group">
-<div class="shrink-0 w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<div class="feature-icon">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
 </div>
 <div>
@@ -285,7 +622,7 @@
 </div>
 </div>
 <div class="flex gap-6 items-start group">
-<div class="shrink-0 w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<div class="feature-icon">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">celebration</span>
 </div>
 <div>
@@ -296,14 +633,15 @@
 </div>
 </div>
 <div class="order-1 lg:order-2">
-<div class="bg-primary-container rounded-[3rem] p-12 md:p-16 text-center shadow-2xl relative overflow-hidden group">
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 to-transparent opacity-50"></div>
-<img alt="Elite Run Club Badge" class="w-56 h-56 mx-auto mb-10 hover:scale-110 transition-transform duration-700 drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNbdyyZUZ-zFv9sI5ZbH8jUlLqn-thhwxzvtmbhbfrHjtFaT5SXaPaqnz9hZbDYMrmKBwKFzMhHNnqmi2beSFdGhWRjQ2itQdEw6avAlU3Giwxb7duCRYCemAgWndaxdZ7fzNIFwGHxjuoWSlAbz7c9cAVETQjNuprMpvSlX4fXMBHG4WSh6GV0LhA0OjdjWc40jvK6cFVFDj9LbGA1_KjMPEFkE5JEIwiFhW3B0ttssyzMksOz4WGgwtZVYsxfNwqOTt0xGufuDU">
+<div class="member-card">
+<div class="member-card-overlay"></div>
+<img alt="Elite Run Club Badge" class="member-badge-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNbdyyZUZ-zFv9sI5ZbH8jUlLqn-thhwxzvtmbhbfrHjtFaT5SXaPaqnz9hZbDYMrmKBwKFzMhHNnqmi2beSFdGhWRjQ2itQdEw6avAlU3Giwxb7duCRYCemAgWndaxdZ7fzNIFwGHxjuoWSlAbz7c9cAVETQjNuprMpvSlX4fXMBHG4WSh6GV0LhA0OjdjWc40jvK6cFVFDj9LbGA1_KjMPEFkE5JEIwiFhW3B0ttssyzMksOz4WGgwtZVYsxfNwqOTt0xGufuDU">
 <h3 class="text-on-primary-container font-bold text-3xl mb-4 relative z-10">Official Member Status</h3>
 <p class="text-primary-fixed/80 mb-10 text-lg leading-relaxed relative z-10">Unlock exclusive gear, private channels, and advanced route tracking.</p>
-<button class="bg-white text-primary px-12 py-4 rounded-full font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all relative z-10">
+<button class="btn-member-kit">
                             Get Your Member Kit
                         </button>
+</div>
 </div>
 </div>
 </div>
@@ -312,31 +650,31 @@
 <section class="py-32 bg-white reveal reveal-visible" style="opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);">
 <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
 <div class="text-center mb-20">
-<h2 class="font-headline-lg text-4xl md:text-5xl text-on-surface mb-4 tracking-tight">Our Story</h2>
+<h2 class="heading-xl mb-4">Our Story</h2>
 <p class="text-on-surface-variant text-lg max-w-2xl mx-auto font-medium">From a single 5K on Marine Drive to a movement reshaping Lucknow's youth fitness culture.</p>
 </div>
 <div class="relative">
 <!-- Vertical line -->
-<div class="hidden md:block absolute left-1/2 -translate-x-0.5 top-0 bottom-0 w-px bg-outline-variant/40"></div>
+<div class="timeline-line"></div>
 <div class="space-y-16">
 
 <!-- First Edition -->
 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
 <div class="w-full md:w-1/2 md:text-right order-2 md:order-1">
-<div class="inline-flex items-center gap-2 mb-3 text-primary bg-primary-fixed/30 px-3 py-1 rounded-full md:flex-row-reverse">
+<div class="timeline-badge timeline-badge-reverse">
 <span class="font-bold text-xs tracking-widest uppercase">July 2024</span>
 </div>
-<h3 class="font-headline-lg text-2xl md:text-3xl text-on-surface mb-3 tracking-tight">First Edition — Elite Marathon '24</h3>
+<h3 class="heading-md mb-3">First Edition — Elite Marathon '24</h3>
 <p class="text-on-surface-variant leading-relaxed">Held at Marine Drive, Lucknow on 14 July 2024. The inaugural 5K introduced Elite's vision to the city — a run designed to turn miles into memories. Cash prizes, T-shirts, medals, and hampers for every finisher. Supported by Decathlon Vibhuti Khand, Daylite, and Bonn.</p>
 </div>
-<div class="hidden md:flex w-10 h-10 rounded-full bg-primary text-on-primary items-center justify-center font-bold text-sm z-10 shrink-0 order-2 shadow-lg">1</div>
+<div class="timeline-node order-2">1</div>
 <div class="w-full md:w-1/2 order-1 md:order-3">
-<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/30">
+<div class="timeline-card">
 <div class="flex flex-wrap gap-3">
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">5K Run</span>
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">Marine Drive</span>
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">Cash Prizes</span>
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">Decathlon</span>
+<span class="tag">5K Run</span>
+<span class="tag">Marine Drive</span>
+<span class="tag">Cash Prizes</span>
+<span class="tag">Decathlon</span>
 </div>
 </div>
 </div>
@@ -345,16 +683,16 @@
 <!-- Season 1 Start -->
 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
 <div class="w-full md:w-1/2 order-1 md:order-1">
-<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/30">
+<div class="timeline-card">
 <p class="text-on-surface-variant text-sm italic leading-relaxed">"What began as a small gathering of 6 runners gradually developed into a steadily growing community. By Week 15, attendance had grown to 103 participants."</p>
 </div>
 </div>
-<div class="hidden md:flex w-10 h-10 rounded-full bg-primary text-on-primary items-center justify-center font-bold text-sm z-10 shrink-0 order-2 shadow-lg">2</div>
+<div class="timeline-node order-2">2</div>
 <div class="w-full md:w-1/2 order-3">
-<div class="inline-flex items-center gap-2 mb-3 text-primary bg-primary-fixed/30 px-3 py-1 rounded-full">
+<div class="timeline-badge">
 <span class="font-bold text-xs tracking-widest uppercase">Sept 2024 – May 2025</span>
 </div>
-<h3 class="font-headline-lg text-2xl md:text-3xl text-on-surface mb-3 tracking-tight">Club Season 1</h3>
+<h3 class="heading-md mb-3">Club Season 1</h3>
 <p class="text-on-surface-variant leading-relaxed">First official club session at Botanical Garden, Lucknow on 22 September 2024 — just 6 runners. Over 15 weekly sessions, the community grew to 103 participants by the final session on 18 May 2025.</p>
 </div>
 </div>
@@ -362,20 +700,20 @@
 <!-- Second Edition -->
 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
 <div class="w-full md:w-1/2 md:text-right order-2 md:order-1">
-<div class="inline-flex items-center gap-2 mb-3 text-primary bg-primary-fixed/30 px-3 py-1 rounded-full md:flex-row-reverse">
+<div class="timeline-badge timeline-badge-reverse">
 <span class="font-bold text-xs tracking-widest uppercase">June 2025</span>
 </div>
-<h3 class="font-headline-lg text-2xl md:text-3xl text-on-surface mb-3 tracking-tight">Second Edition — Elite 5K Run '25</h3>
+<h3 class="heading-md mb-3">Second Edition — Elite 5K Run '25</h3>
 <p class="text-on-surface-variant leading-relaxed">Janeshwar Mishra Park, 22 June 2025. Nearly 250 runners. "Don't scroll your life away. Run it instead." Prime sponsors: Lucknow Falcons. Partners: Decathlon, Knock Sense, Danbro, CM Yuva Yojna, and Mouth Wide Shut bakery for the Top 5 women finishers.</p>
 </div>
-<div class="hidden md:flex w-10 h-10 rounded-full bg-primary text-on-primary items-center justify-center font-bold text-sm z-10 shrink-0 order-2 shadow-lg">3</div>
+<div class="timeline-node order-2">3</div>
 <div class="w-full md:w-1/2 order-1 md:order-3">
-<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/30">
+<div class="timeline-card">
 <div class="flex flex-wrap gap-3">
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">250 Runners</span>
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">Janeshwar Park</span>
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">Lucknow Falcons</span>
-<span class="bg-primary-fixed/40 text-primary text-xs font-bold px-3 py-1 rounded-full">CM Yuva Yojna</span>
+<span class="tag">250 Runners</span>
+<span class="tag">Janeshwar Park</span>
+<span class="tag">Lucknow Falcons</span>
+<span class="tag">CM Yuva Yojna</span>
 </div>
 </div>
 </div>
@@ -384,16 +722,16 @@
 <!-- Season 2 + Pickleball -->
 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
 <div class="w-full md:w-1/2 order-1 md:order-1">
-<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/30">
+<div class="timeline-card">
 <p class="text-on-surface-variant text-sm italic leading-relaxed">"Not every story we tell is measured in kilometres. Some begin where the usual rhythm breaks — where running shoes pause, curiosity steps in, and a different kind of energy takes over."</p>
 </div>
 </div>
-<div class="hidden md:flex w-10 h-10 rounded-full bg-primary text-on-primary items-center justify-center font-bold text-sm z-10 shrink-0 order-2 shadow-lg">4</div>
+<div class="timeline-node order-2">4</div>
 <div class="w-full md:w-1/2 order-3">
-<div class="inline-flex items-center gap-2 mb-3 text-primary bg-primary-fixed/30 px-3 py-1 rounded-full">
+<div class="timeline-badge">
 <span class="font-bold text-xs tracking-widest uppercase">July 2025 – Present</span>
 </div>
-<h3 class="font-headline-lg text-2xl md:text-3xl text-on-surface mb-3 tracking-tight">Club Season 2 & Beyond</h3>
+<h3 class="heading-md mb-3">Club Season 2 & Beyond</h3>
 <p class="text-on-surface-variant leading-relaxed">Season 2 opened at Janeshwar Mishra Park on 13 July 2025. The club expanded into new territory with a Pickleball Tournament on 28 December 2025 at Pickleball Café, Mill Road — in collaboration with Athrise India. Movement culture, beyond the miles.</p>
 </div>
 </div>
@@ -407,15 +745,15 @@
 </main>
 <!-- Footer -->
 <footer class="w-full bg-surface-container-low border-t border-outline-variant/30">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-margin-desktop py-20 max-w-7xl mx-auto">
+<div class="footer-grid">
 <div class="md:col-span-1">
 <div class="font-headline-lg text-3xl text-primary mb-6 flex items-center"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ" alt="Elite Run Club Logo" class="h-10 w-auto inline-block mr-3 mb-1">Elite Run Club</div>
 <p class="text-on-surface-variant font-medium leading-relaxed mb-8">Connecting runners through passion, sweat, and community. Join the collective pursuit.</p>
 <div class="flex gap-4">
-<a class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="https://www.instagram.com/eliterunclub">
+<a class="social-icon" href="https://www.instagram.com/eliterunclub">
 <span class="material-symbols-outlined text-xl">brand_awareness</span>
 </a>
-<a class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<a class="social-icon" href="#">
 <span class="material-symbols-outlined text-xl">mail</span>
 </a>
 </div>
@@ -423,25 +761,25 @@
 <div>
 <h5 class="font-bold text-on-surface mb-8 uppercase tracking-widest text-sm">Community</h5>
 <ul class="space-y-4">
-<li><a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="https://www.instagram.com/elite.run.club/">Instagram</a></li>
-<li class=""><a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">WhatsApp Groups</a></li>
-<li class=""><a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Local Chapters</a></li>
-<li class=""><a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Safety Guidelines</a></li>
+<li><a class="nav-link" href="https://www.instagram.com/elite.run.club/">Instagram</a></li>
+<li class=""><a class="nav-link" href="#">WhatsApp Groups</a></li>
+<li class=""><a class="nav-link" href="#">Local Chapters</a></li>
+<li class=""><a class="nav-link" href="#">Safety Guidelines</a></li>
 </ul>
 </div>
 <div>
 <h5 class="font-bold text-on-surface mb-8 uppercase tracking-widest text-sm">Explore</h5>
 <ul class="space-y-4">
 
-<li class=""><a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Training Plans</a></li>
-<li class=""><a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Ambassadors</a></li>
-<li class=""><a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Events Calendar</a></li>
+<li class=""><a class="nav-link" href="#">Training Plans</a></li>
+<li class=""><a class="nav-link" href="#">Ambassadors</a></li>
+<li class=""><a class="nav-link" href="#">Events Calendar</a></li>
 </ul>
 </div>
 
 </div>
-<div class="px-6 md:px-margin-desktop py-10 max-w-7xl mx-auto border-t border-outline-variant/10">
-<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant text-sm font-medium">
+<div class="footer-bottom">
+<div class="footer-bottom-inner">
 <p class="">© 2026 Elite Run Club. Join the collective pursuit.</p>
 <div class="flex gap-8">
 <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
