@@ -111,16 +111,6 @@
         }
 
     /* ── Buttons ─────────────────────── */
-    .btn-primary-nav {
-      display: none; background: #00336e; color: #fff;
-      padding: 0.625rem 1.5rem; border-radius: 9999px;
-      font-size: 0.875rem; font-weight: 600; border: none; cursor: pointer;
-      transition: all 0.3s;
-    }
-    @media(min-width:640px){ .btn-primary-nav { display: block; } }
-    .btn-primary-nav:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: translateY(-1px); }
-    .btn-primary-nav:active { transform: translateY(0); }
-
     .btn-hero-primary {
       width: 100%; background: #d7e2ff; color: #001a40;
       padding: 1rem 2.5rem; border-radius: 9999px;
@@ -495,14 +485,12 @@
 <!-- Desktop Links -->
 <div class="hidden lg:flex items-center gap-8">
 <a class="nav-link-active" href="index.html">Home</a>
-<a class="nav-link" href="events.html">Runs &amp; Events</a>
+<a class="nav-link" href="events.html">Runs</a>
 <a class="nav-link" href="routes.html">Local Routes</a>
 <a class="nav-link" href="community.html">Community</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="btn-primary-nav">
-                    Join Next Run
-                </button>
+
 <a href="profile.html" title="My Profile" style="display:inline-block;"><div class="avatar-ring">
 <img alt="Member Profile" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0UUsWhn7YSUnE8K04U3V2ejZnlfkuOT5vxevmrD9sHSDAv0QTaNRLawnudDi1iymmaT7VW6SY8VNXhTXXRYpP04ZOL6mOqiURQnqi5SQ1Ayj-IZ435LL6BBUUn19qkbqpN5Epln5N1eBjIVvhhh6G0M7RnS-q5a_XJ8bSRtKIn69HeC4vCCRv09HihESHdWJb-1pgrWjB4z5w1ZxRNcF_l6gtaVd3AugFlu7Yr0DL_KPRVEtq1Q4EWW74uqW68bYWz-Y_GeM1PaA">
 </div></a>
@@ -524,12 +512,12 @@
                     More than a club—a collective. Join our local community of runners in the city. Every pace, every person, one shared goal.
                 </p>
 <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-<button class="btn-hero-primary">
+<button class="btn-hero-ghost">
                         Become a Member
                     </button>
-<button class="btn-hero-ghost">
-                        View Schedule
-                    </button>
+<button class="btn-hero-primary" href="events.html">
+                    Join Next Run
+                </button>
 </div>
 </div>
 <div class="hero-scroll-hint">
