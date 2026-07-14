@@ -157,6 +157,7 @@
     .outreach-text {
         display: -webkit-box;
         -webkit-line-clamp: 2;
+        line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
         max-height: 3rem; /* ~2 lines at this font-size/line-height */
@@ -165,6 +166,7 @@
 
     .card-hover:hover .outreach-text {
         -webkit-line-clamp: unset;
+        line-clamp: unset;
         max-height: 12rem; /* enough to fit full copy on every card */
     }
 
