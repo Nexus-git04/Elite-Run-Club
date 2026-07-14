@@ -72,7 +72,7 @@
 
     .card { background: #f2f4f6; border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(195,198,209,0.3); }
     .card-white { background: #fff; border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(195,198,209,0.3); }
-    .card-hover { background: #fff; border-radius: 1.25rem; padding: 1.75rem; border: 1px solid rgba(195,198,209,0.3); transition: all 0.3s; }
+    .card-hover { background: #fff; border-radius: 1.25rem; padding: 1.75rem; border: 1px solid rgba(195,198,209,0.3); transition: all 0.3s; overflow: hidden; }
     .card-hover:hover { border-color: #00336e; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: scale(1.02); }
     .card-lg { background: #fff; border-radius: 2rem; padding: 2rem 3rem; border: 1px solid rgba(195,198,209,0.3); box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; position: relative; }
     .card-event { background: #fff; border-radius: 1.5rem; padding: 1.5rem; border: 1px solid rgba(225,227,229,1); box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: all 0.3s; }
@@ -152,6 +152,58 @@
     .tag-white { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; }
     .timeline-badge { display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; color: #00336e; background: rgba(215,226,255,0.3); padding: 0.25rem 0.75rem; border-radius: 9999px; }
     .col-span-8 { grid-column: span 8; }
+
+    /* ── Outreach card reveal-on-hover ───────────── */
+    .outreach-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-height: 3rem; /* ~2 lines at this font-size/line-height */
+        transition: max-height 0.4s ease;
+    }
+
+    .card-hover:hover .outreach-text {
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        max-height: 12rem; /* enough to fit full copy on every card */
+    }
+
+    .gallery-btn-wrap {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-6px);
+        overflow: hidden;
+        transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.3s ease, margin-top 0.3s ease;
+        margin-top: 0;
+    }
+
+    .card-hover:hover .gallery-btn-wrap {
+        max-height: 60px;
+        opacity: 1;
+        transform: translateY(0);
+        margin-top: 1rem;
+    }
+
+    .view-gallery-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        background: #00336e;
+        color: #fff;
+        border: none;
+        border-radius: 9999px;
+        padding: 0.5rem 1.25rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+    }
+
+    .view-gallery-btn:hover {
+        opacity: 0.9;
+    }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -388,7 +440,13 @@ Season 2 kicked off on 13 July 2025 at Janeshwar Mishra Park, Gate 7. The second
 </div>
 <p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">27 Apr 2025</p>
 <h4 class="font-title-md text-on-surface mb-3">INAAM NGO Food Drive</h4>
-<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">In collaboration with INAAM, a student-led NGO, club members distributed food boxes near Hanuman Setu, Lucknow.</p>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed outreach-text">In collaboration with INAAM, a student-led NGO, club members distributed food boxes near Hanuman Setu, Lucknow.</p>
+<div class="gallery-btn-wrap">
+<a href="#" class="view-gallery-btn">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+                        View Gallery
+</a>
+</div>
 </div>
 <!-- Muskaan Foundation -->
 <div class="card-hover">
@@ -397,7 +455,13 @@ Season 2 kicked off on 13 July 2025 at Janeshwar Mishra Park, Gate 7. The second
 </div>
 <p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">19 May 2025</p>
 <h4 class="font-title-md text-on-surface mb-3">Muskaan Foundation</h4>
-<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">Visited a primary school with the Muskaan Foundation — distributed stationery, food, and ran recreational field activities for children.</p>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed outreach-text">Visited a primary school with the Muskaan Foundation — distributed stationery, food, and ran recreational field activities for children.</p>
+<div class="gallery-btn-wrap">
+<a href="#" class="view-gallery-btn">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+                        View Gallery
+</a>
+</div>
 </div>
 <!-- Community Bhandara -->
 <div class="card-hover">
@@ -406,7 +470,13 @@ Season 2 kicked off on 13 July 2025 at Janeshwar Mishra Park, Gate 7. The second
 </div>
 <p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">31 May 2025</p>
 <h4 class="font-title-md text-on-surface mb-3">Community Bhandara</h4>
-<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">A large-scale bhandara at Parivartan Chowk where nearly 1,000 people gathered as part of a collective food service initiative.</p>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed outreach-text">A large-scale bhandara at Parivartan Chowk where nearly 1,000 people gathered as part of a collective food service initiative.</p>
+<div class="gallery-btn-wrap">
+<a href="#" class="view-gallery-btn">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+                        View Gallery
+</a>
+</div>
 </div>
 <!-- The Midnight Bulletin -->
 <div class="card-hover">
@@ -415,81 +485,16 @@ Season 2 kicked off on 13 July 2025 at Janeshwar Mishra Park, Gate 7. The second
 </div>
 <p class="text-primary font-label-md mb-1 uppercase tracking-wider text-xs">2 Jun 2025</p>
 <h4 class="font-title-md text-on-surface mb-3">The Midnight Bulletin</h4>
-<p class="text-on-surface-variant font-body-md text-sm leading-relaxed">Visited Paul Mercy Home, an old age home in Lucknow, with The Midnight Bulletin. Finger painting, interactive sessions, and distributed goodies for residents.</p>
-</div>
-</div>
-</section>
-<!-- Instagram Integration -->
-<section class="mb-24">
-<div class="text-center mb-12">
-<div class="flex items-center justify-center gap-2 mb-2">
-<span class="material-symbols-outlined text-error">photo_camera</span>
-<span class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Live from the Club</span>
-</div>
-<h3 class="font-headline-lg text-headline-lg text-on-surface">#EliteRunClubCollective</h3>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-<div class="aspect-square rounded-xl overflow-hidden group relative">
-<img class="card-img-zoom" data-alt="A close-up shot of several pairs of colorful high-performance running shoes in a circle on a track, signifying team unity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHazRD4jqcj8TTcoE_ZQpk4RzBJGRELZ4eJhf4hiPiC6EvBWcRidivMoc2ZnFMFXeh1OIGzo_5VgEGKE3UGdk9JfIK5qslDZScCLaMN1eB9bI4SyUBE99pUgK16NWxLVCg-tibdR3BOl87JmxZmGwugk3C26p52cdYofeI5OwyPa0-lpVl3Gn6PaE3lYhA_pjr5V5jVzemLjP_mdx4f5Tr4kHFFY7WRWOS6loQT3JEomOWgVlcM9mPKMjyleM2FW75b-yyvwTl90w"/>
-<div class="img-overlay">
-<span class="material-symbols-outlined text-white">favorite</span>
-</div>
-</div>
-<div class="aspect-square rounded-xl overflow-hidden group relative" style="transform: translateY(0px);">
-<img class="card-img-zoom" data-alt="A dramatic shot of a runner's silhouette against a fiery orange and purple sunset over a coastal running path." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDa_8bOe-KC-853Mhruq4NFUiQ0qiGf9KV7nKnUBX5FdYgjfTVbhvr16y2VjBKjKqYRpCACELaw134WJ3vqZObdMD-1reLIwtg6Z9Gk0GdiWKxsQV22TUeV17I-dzQUaqFLEge3UVRdgGa6_atUG3-XjtX_H0B4dYi3KJSxDcWYaJ_LIF_dEZRrLSGEHnYEOFRwMk0eHTw2TvUBuwShuHZhNTJaj_nhh0ZekN6Qf9f4cMsveyexeI9LphbykNAvNcagUNHnYq6l90"/>
-<div class="img-overlay">
-<span class="material-symbols-outlined text-white">favorite</span>
-</div>
-</div>
-<div class="aspect-square rounded-xl overflow-hidden group relative">
-<img class="card-img-zoom" data-alt="A group of runners sharing a sweaty post-run selfie, holding coffee cups and smiling at the camera in a modern urban cafe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Rb6jk6c0_FH4leEQqp1BIs1hLtgZoMaY9Cazwd7SrfpT2yKA4lvKhfNEdlBwWBhNXOpJVCc6c4gOyA-ko9I3TQ4Y1eTVNP9O9aZxngjLKv8orGgQBFRZ7huZ74LfTovqv2AbYyNZzqy3WCP3FGCqC72uaHCoxTOauSxBpPuS2TsqEpGlg3GQgPLuHpBVznih2sO6Gh8hq47ytCwmg3ypV3ANqtiDQjGYnYkqlWpEYdaJ6CewgzdQenJPncbpoUIzHeG3PMPh6ls"/>
-<div class="img-overlay">
-<span class="material-symbols-outlined text-white">favorite</span>
-</div>
-</div>
-<div class="aspect-square rounded-xl overflow-hidden group relative">
-<img class="card-img-zoom" data-alt="A scenic view of a misty forest trail with a lone runner in the distance, capturing the tranquility and personal focus of trail running." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjYnPNl7goTrkCN_i8hj16Z3cKJeNqgksJh8Vve_c0ONBeBLKykphBXqYuaWlSPG3ui0z_2UNO4BUJ1r927AyUx9T4eRBIzjzjvD2v26N8Hi4EQDG6YIvmeLdri4eaaL3rRyUsbRoodLAqGZL3W7OoVB69abpBS9oTZGUp1yNBNZYnGcOh6lKmiDYi5SP3ZVB9-CgCpVXsQIjk2tHiSsIm7lNlnfy7lBOXZ6f3oziERnjUi7ce-KwdXH22aSsjNx6y4AgS1Ax6h8A"/>
-<div class="img-overlay">
-<span class="material-symbols-outlined text-white">favorite</span>
-</div>
-</div>
-<div class="aspect-square rounded-xl overflow-hidden group relative">
-<img class="card-img-zoom" data-alt="Brightly colored running jerseys hanging on a locker room bench, conveying preparation and the professional feel of the club." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcJZi0z0PNnmzqYGMgMRVX0kW3TtNjSOxpmn66LtQJrF1w4hDS0zczwXd_qud1F9xZZNRBHzq5D5ZgPy3eqL0dsB2X2_DLfgfDZUVA8yIceAQYu_ffcQbqc1ZuVQpTj2Fq-CGw2Kb4gwGxtu1CZEe8O6zOsQobN2NdEukzonaldo33YNdqTW-glnPGzvTpMWi1yA7APmPrm3soQIsXp6xejtsmmlzkWYdp8Ava9A4Vm0QD5Oojrr0zZTvVy14q3FFZaX8PmBBeLFs"/>
-<div class="img-overlay">
-<span class="material-symbols-outlined text-white">favorite</span>
-</div>
-</div>
-<div class="aspect-square rounded-xl overflow-hidden group relative">
-<img class="card-img-zoom" data-alt="Close-up of a runner's hand wearing a digital sports watch showing an impressive activity summary, with a blurred outdoor track behind." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2KvWZ6RlQPodrH8g4mIJa-vixngMLJsENgL3B8OLFN5kVlOAqALNcd8ZyXhgtjrPaOmQteu40EGAoGNbEjbH53bcKhMTrq0PynJqHlccqqMCoTUsIbCNhdmK5QxGZxdkqN6kC6u2oj_erIY-qvsJMJCU9ggKKcHVDujTL5CFN8tn1_78S8jE1w6n8KhPMmPcsAivRvp24bBxwbxv7BnCqTyMhbYP_7EYhX6yv8kF28JFVbRjah75VoSb8w9_SFA5--j3ux1Bm8A"/>
-<div class="img-overlay">
-<span class="material-symbols-outlined text-white">favorite</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Digital Community Join CTA -->
-<section class="mb-12">
-<div class="card-lg">
-<div class="glow-blob-tr"></div>
-<div class="glow-blob-bl"></div>
-<div class="relative z-10 text-center max-w-3xl mx-auto">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Stay Connected Beyond the Run</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-10">Our digital hubs are where the magic happens between meetups. Swap gear advice, find training buddies, or just share your morning miles.</p>
-<div class="flex flex-col md:flex-row gap-6 justify-center">
-<a class="btn-social-dark" href="#">
-<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>photo_camera</span>
-<span class="font-title-md text-title-md">Follow on Instagram</span>
-</a>
-<a class="btn-whatsapp" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
-<span class="font-title-md text-title-md">WhatsApp Groups</span>
+<p class="text-on-surface-variant font-body-md text-sm leading-relaxed outreach-text">Visited Paul Mercy Home, an old age home in Lucknow, with The Midnight Bulletin. Finger painting, interactive sessions, and distributed goodies for residents.</p>
+<div class="gallery-btn-wrap">
+<a href="#" class="view-gallery-btn">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+                        View Gallery
 </a>
 </div>
-<p class="mt-8 text-on-surface-variant font-label-md">250+ runners at Edition 2 · Season 1 grew from 6 to 103 members.</p>
 </div>
 </div>
 </section>
-</main>
 <!-- Footer -->
 <footer class="w-full mt-auto bg-surface-container-low dark:bg-surface-dim">
 <div class="footer-grid border-t border-outline-variant">
