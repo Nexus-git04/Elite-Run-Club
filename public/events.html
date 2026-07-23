@@ -114,7 +114,7 @@
 <!-- TopNavBar -->
 <nav class="w-full top-0 sticky z-50 bg-surface shadow-sm">
 <div class="flex justify-between items-center px-4 md:px-margin-desktop py-4 max-w-7xl mx-auto">
-<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-3"><img alt="Elite Run Club Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ"/>Elite Run Club</div>
+<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-3"><img alt="Elite Run Club Logo" class="w-20 h-20 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmtHIhH_cFssZSLPbi-xxH42e61wJ6b6BMdxZufmawiKOczP_BwWf3TfVwnc9KtatJHi3W2HmXvjrlpydengQez_P_dn3FwJK-rgaxAJSf1j9kqrUPrFLRHjK9ax0co4zc4QncYYc8-VP_tsZRC4aqTTR-_yl9U0quav15NX5-wqeL3yvo0kb5ROTIxpzxOLXgqzYNK5iHQgUSgDYG4nsbjlczwivPWoPFJBlBPZDBWrFzaKsuB0TZcNVWCj6j0qlKCBy4jt55dZQ"/>Elite Run Club</div>
 <div class="hidden md:flex gap-8 items-center">
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="index.html">Home</a>
 <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="events.html">Runs</a>
@@ -160,105 +160,153 @@
 
 <!-- Past Runs -->
 <section>
-  <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-headline-lg text-2xl text-on-surface font-bold">Past Runs</h2>
-  </div>
-  <div class="space-y-4">
+ <!-- Season 2 Sessions -->
+   <!-- Season 2 Sessions -->
+    <div class="relative overflow-hidden bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:p-12 transition-all duration-700 ease-out group h-auto md:h-[180px] hover:md:h-[50vh] hover:shadow-2xl">
+      
+      <!-- Hover Background Image (Fades in ONLY on hover) -->
+      <img class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0" 
+           src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1200&q=80" 
+           alt="Season 2 Background" />
+      
+      <!-- Black Gradient Overlay (Fades in ONLY on hover) -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-10"></div>
 
-    <!-- Season 2 Sessions -->
-    <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:border-primary transition-colors group">
-      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-        <div class="flex-shrink-0 text-center bg-primary-fixed/30 rounded-xl px-5 py-3 w-fit">
-          <p class="text-xs font-bold uppercase tracking-widest text-primary mb-0.5">Jul 2025</p>
-          <p class="text-2xl font-black text-primary">S2</p>
-          <p class="text-xs font-semibold text-on-surface-variant">Season 2</p>
+      <!-- Card Content Container (Adapts height to center itself when expanded) -->
+      <div class="relative z-20 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 h-full transition-transform duration-700">
+        
+        <!-- Date Badge (Turns Glassmorphic ONLY on hover) -->
+        <div class="flex-shrink-0 text-center bg-primary-fixed/30 group-hover:bg-white/10 group-hover:backdrop-blur-md rounded-xl px-5 py-3 w-fit border border-transparent group-hover:border-white/25 transition-all duration-700">
+          <p class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white/90 mb-0.5 transition-colors duration-700">Jul 2025</p>
+          <p class="text-2xl font-black text-primary group-hover:text-white transition-colors duration-700">S2</p>
+          <p class="text-xs font-semibold text-on-surface-variant group-hover:text-white/70 transition-colors duration-700">Season 2</p>
         </div>
+
+        <!-- Text Details & Badges (Transition text colors to white ONLY on hover) -->
         <div class="flex-1">
           <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="bg-surface-container-high text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Completed</span>
-            <span class="text-xs text-on-surface-variant font-medium">Weekly Club Sessions</span>
+            <span class="bg-surface-container-high group-hover:bg-white/20 text-on-surface group-hover:text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide transition-all duration-700">Completed</span>
+            <span class="text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">Weekly Club Sessions</span>
           </div>
-          <h3 class="font-title-md text-on-surface text-lg font-bold mb-1">Club Season 2</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Kicked off 13 July 2025 at Janeshwar Mishra Park (Gate 7). The second session moved to YOLO Sports Arena, followed by an exclusive basketball session — Elite's growing vision of a wider youth sports culture beyond running.</p>
-          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant font-medium">
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">location_on</span>Janeshwar Mishra Park · YOLO Sports Arena</span>
+          <h3 class="font-title-md text-on-surface group-hover:text-white text-lg md:text-xl group-hover:md:text-2xl font-bold mb-1 transition-all duration-700">Club Season 2</h3>
+          <p class="text-on-surface-variant group-hover:text-white/95 text-sm md:text-base leading-relaxed transition-all duration-700 max-w-4xl">Kicked off 13 July 2025 at Janeshwar Mishra Park (Gate 7). The second session moved to YOLO Sports Arena, followed by an exclusive basketball session — Elite's growing vision of a wider youth sports culture beyond running.</p>
+          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">location_on</span>Janeshwar Mishra Park · YOLO Sports Arena</span>
           </div>
         </div>
       </div>
-    </div>
-
+    </div>   <!-- Second Edition -->
     <!-- Second Edition -->
-    <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:border-primary transition-colors group">
-      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-        <div class="flex-shrink-0 text-center bg-primary-fixed/30 rounded-xl px-5 py-3 w-fit">
-          <p class="text-xs font-bold uppercase tracking-widest text-primary mb-0.5">Jun 2025</p>
-          <p class="text-2xl font-black text-primary">22</p>
-          <p class="text-xs font-semibold text-on-surface-variant">Sunday</p>
+    <div class="relative overflow-hidden bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:p-12 transition-all duration-700 ease-out group h-auto md:h-[180px] hover:md:h-[50vh] hover:shadow-2xl">
+      
+      <!-- Hover Background Image (Fades in ONLY on hover) -->
+      <img class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0" 
+           src="https://images.unsplash.com/photo-1502224562085-639556652f33?auto=format&fit=crop&w=1200&q=80" 
+           alt="Second Edition Background" />
+      
+      <!-- Black Gradient Overlay (Fades in ONLY on hover) -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-10"></div>
+
+      <!-- Card Content Container (Adapts height to center itself when expanded) -->
+      <div class="relative z-20 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 h-full transition-transform duration-700">
+        
+        <!-- Date Badge (Turns Glassmorphic ONLY on hover) -->
+        <div class="flex-shrink-0 text-center bg-primary-fixed/30 group-hover:bg-white/10 group-hover:backdrop-blur-md rounded-xl px-5 py-3 w-fit border border-transparent group-hover:border-white/25 transition-all duration-700">
+          <p class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white/90 mb-0.5 transition-colors duration-700">Jun 2025</p>
+          <p class="text-2xl font-black text-primary group-hover:text-white transition-colors duration-700">22</p>
+          <p class="text-xs font-semibold text-on-surface-variant group-hover:text-white/70 transition-colors duration-700">Sunday</p>
         </div>
+
+        <!-- Text Details & Badges (Transition text colors to white ONLY on hover) -->
         <div class="flex-1">
           <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">5K Run</span>
-            <span class="text-xs text-on-surface-variant font-medium">~250 runners</span>
+            <span class="bg-secondary-container group-hover:bg-white/20 text-on-secondary-container group-hover:text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide transition-all duration-700">5K Run</span>
+            <span class="text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">~250 runners</span>
           </div>
-          <h3 class="font-title-md text-on-surface text-lg font-bold mb-1">Second Edition — Elite 5K Run '25</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Held at Janeshwar Mishra Park, Gomti Nagar. Built around the message "Don't scroll your life away. Run it instead." Nearly 250 runners from across the city. Cash prizes for top 3, finisher medals, T-shirts, and certificates. Exclusive goodies for the Top 15 runners. Top 5 women finishers recognised in partnership with Mouth Wide Shut bakery.</p>
-          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant font-medium">
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">location_on</span>Janeshwar Mishra Park, Gomti Nagar</span>
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">emoji_events</span>₹5000 · ₹3000 · ₹1000</span>
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">handshake</span>Lucknow Falcons · Decathlon · Knock Sense · CM Yuva Yojna</span>
+          <h3 class="font-title-md text-on-surface group-hover:text-white text-lg md:text-xl group-hover:md:text-2xl font-bold mb-1 transition-all duration-700">Second Edition — Elite 5K Run '25</h3>
+          <p class="text-on-surface-variant group-hover:text-white/95 text-sm md:text-base leading-relaxed transition-all duration-700 max-w-4xl">Held at Janeshwar Mishra Park, Gomti Nagar. Built around the message "Don't scroll your life away. Run it instead." Nearly 250 runners from across the city. Cash prizes for top 3, finisher medals, T-shirts, and certificates. Exclusive goodies for the Top 15 runners. Top 5 women finishers recognised in partnership with Mouth Wide Shut bakery.</p>
+          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">location_on</span>Janeshwar Mishra Park, Gomti Nagar</span>
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">emoji_events</span>₹5000 · ₹3000 · ₹1000</span>
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">handshake</span>Lucknow Falcons · Decathlon · Knock Sense · CM Yuva Yojna</span>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Season 1 -->
-    <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:border-primary transition-colors group">
-      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-        <div class="flex-shrink-0 text-center bg-primary-fixed/30 rounded-xl px-5 py-3 w-fit">
-          <p class="text-xs font-bold uppercase tracking-widest text-primary mb-0.5">Sep 2024</p>
-          <p class="text-2xl font-black text-primary">S1</p>
-          <p class="text-xs font-semibold text-on-surface-variant">Season 1</p>
+    <!-- Club Season 1 -->
+    <div class="relative overflow-hidden bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:p-12 transition-all duration-700 ease-out group h-auto md:h-[180px] hover:md:h-[50vh] hover:shadow-2xl">
+      
+      <!-- Hover Background Image -->
+      <img class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0" 
+           src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80" 
+           alt="Club Season 1 Background" />
+      
+      <!-- Black Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-10"></div>
+
+      <!-- Card Content Container -->
+      <div class="relative z-20 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 h-full transition-transform duration-700">
+        
+        <!-- Date Badge -->
+        <div class="flex-shrink-0 text-center bg-primary-fixed/30 group-hover:bg-white/10 group-hover:backdrop-blur-md rounded-xl px-5 py-3 w-fit border border-transparent group-hover:border-white/25 transition-all duration-700">
+          <p class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white/90 mb-0.5 transition-colors duration-700">Sep 2024</p>
+          <p class="text-2xl font-black text-primary group-hover:text-white transition-colors duration-700">S1</p>
+          <p class="text-xs font-semibold text-on-surface-variant group-hover:text-white/70 transition-colors duration-700">Season 1</p>
         </div>
+
+        <!-- Text Details & Badges -->
         <div class="flex-1">
           <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="bg-surface-container-high text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Completed</span>
-            <span class="text-xs text-on-surface-variant font-medium">15 sessions · 6 → 103 runners</span>
+            <span class="bg-surface-container-high group-hover:bg-white/20 text-on-surface group-hover:text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide transition-all duration-700">Completed</span>
+            <span class="text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">15 sessions · 6 → 103 runners</span>
           </div>
-          <h3 class="font-title-md text-on-surface text-lg font-bold mb-1">Club Season 1</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">First official club session held at Botanical Garden, Lucknow on 22 September 2024 — just 6 runners showed up. Over 15 weekly sessions through the year, the community grew steadily to 103 participants by the final session on 18 May 2025.</p>
-          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant font-medium">
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">location_on</span>Botanical Garden, Lucknow</span>
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">date_range</span>22 Sep 2024 – 18 May 2025</span>
+          <h3 class="font-title-md text-on-surface group-hover:text-white text-lg md:text-xl group-hover:md:text-2xl font-bold mb-1 transition-all duration-700">Club Season 1</h3>
+          <p class="text-on-surface-variant group-hover:text-white/95 text-sm md:text-base leading-relaxed transition-all duration-700 max-w-4xl">First official club session held at Botanical Garden, Lucknow on 22 September 2024 — just 6 runners showed up. Over 15 weekly sessions through the year, the community grew steadily to 103 participants by the final session on 18 May 2025.</p>
+          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">location_on</span>Botanical Garden, Lucknow</span>
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">calendar_today</span>22 Sep 2024 – 18 May 2025</span>
           </div>
         </div>
       </div>
     </div>
+   <!-- First Edition -->
+    <div class="relative overflow-hidden bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:p-12 transition-all duration-700 ease-out group h-auto md:h-[180px] hover:md:h-[50vh] hover:shadow-2xl">
+      
+      <!-- Hover Background Image -->
+      <img class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0" 
+           src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=1200&q=80" 
+           alt="First Edition Background" />
+      
+      <!-- Black Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-10"></div>
 
-    <!-- First Edition -->
-    <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 hover:border-primary transition-colors group">
-      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-        <div class="flex-shrink-0 text-center bg-primary-fixed/30 rounded-xl px-5 py-3 w-fit">
-          <p class="text-xs font-bold uppercase tracking-widest text-primary mb-0.5">Jul 2024</p>
-          <p class="text-2xl font-black text-primary">14</p>
-          <p class="text-xs font-semibold text-on-surface-variant">Sunday</p>
+      <!-- Card Content Container -->
+      <div class="relative z-20 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 h-full transition-transform duration-700">
+        
+        <!-- Date Badge -->
+        <div class="flex-shrink-0 text-center bg-primary-fixed/30 group-hover:bg-white/10 group-hover:backdrop-blur-md rounded-xl px-5 py-3 w-fit border border-transparent group-hover:border-white/25 transition-all duration-700">
+          <p class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white/90 mb-0.5 transition-colors duration-700">Jul 2024</p>
+          <p class="text-2xl font-black text-primary group-hover:text-white transition-colors duration-700">14</p>
+          <p class="text-xs font-semibold text-on-surface-variant group-hover:text-white/70 transition-colors duration-700">Sunday</p>
         </div>
+
+        <!-- Text Details & Badges -->
         <div class="flex-1">
           <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="bg-surface-container-high text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Completed</span>
-            <span class="text-xs text-on-surface-variant font-medium">5K · Two laps of 2.5km</span>
+            <span class="bg-surface-container-high group-hover:bg-white/20 text-on-surface group-hover:text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide transition-all duration-700">Completed</span>
+            <span class="text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">5K · Two laps of 2.5km</span>
           </div>
-          <h3 class="font-title-md text-on-surface text-lg font-bold mb-1">First Edition — Elite Marathon '24</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">The run that started it all. Held at Marine Drive, Lucknow on 14 July 2024. A 5K designed to "turn miles into memories" — with mini water stations and checkpoints across the course. Every runner received an official T-shirt, custom medal, and refreshment box. Cash prizes for the top 3 finishers. Supported by Decathlon Vibhuti Khand, Daylite, and Bonn.</p>
-          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant font-medium">
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">location_on</span>Marine Drive, Lucknow</span>
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">emoji_events</span>₹5000 · ₹3000 · ₹1000</span>
-            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-sm">handshake</span>Decathlon · Daylite · Bonn</span>
+          <h3 class="font-title-md text-on-surface group-hover:text-white text-lg md:text-xl group-hover:md:text-2xl font-bold mb-1 transition-all duration-700">First Edition — Elite Marathon '24</h3>
+          <p class="text-on-surface-variant group-hover:text-white/95 text-sm md:text-base leading-relaxed transition-all duration-700 max-w-4xl">The run that started it all. Held at Marine Drive, Lucknow on 14 July 2024. A 5K designed to "turn miles into memories" — with mini water stations and checkpoints across the course. Every runner received an official T-shirt, custom medal, and refreshment box. Cash prizes for the top 3 finishers. Supported by Decathlon Vibhuti Khand, Daylite, and Bonn.</p>
+          <div class="flex flex-wrap gap-4 mt-3 text-xs text-on-surface-variant group-hover:text-white/80 font-medium transition-colors duration-700">
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">location_on</span>Marine Drive, Lucknow</span>
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">emoji_events</span>₹5000 · ₹3000 · ₹1000</span>
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary group-hover:text-white text-sm transition-colors duration-700">handshake</span>Decathlon · Daylite · Bonn</span>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
 </section>
 
 </main>
